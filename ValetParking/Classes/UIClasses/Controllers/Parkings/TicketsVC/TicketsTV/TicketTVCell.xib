@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cabin-Bold.ttf">
+            <string>Cabin-Bold</string>
+        </array>
+        <array key="Cabin-Italic.ttf">
+            <string>Cabin-Italic</string>
+        </array>
+        <array key="Cabin-Regular.ttf">
+            <string>Cabin-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="168" id="KGk-i7-Jjw" customClass="TicketTVCell" customModule="ValetParking" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="168"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="168"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MTS-J4-fWa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="158"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdB-p1-ZL0">
+                                <rect key="frame" x="20" y="15" width="51.5" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="rx5-lZ-pkc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TD48989" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ni-zR-nkJ">
+                                <rect key="frame" x="20" y="33" width="63.5" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="oy7-Rx-Q8P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="15"/>
+                                <color key="textColor" red="0.31599587200000001" green="0.14208868150000001" blue="0.44941395519999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR9-9D-vbm">
+                                <rect key="frame" x="259.5" y="15" width="40.5" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="nlr-7V-zuU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NS1457" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTp-AY-oN4">
+                                <rect key="frame" x="250" y="33" width="50" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="t4p-O8-GjQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="15"/>
+                                <color key="textColor" red="0.31764705882352939" green="0.14117647058823529" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moX-dm-GFS">
+                                <rect key="frame" x="0.0" y="109" width="320" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="0c3-gS-nHc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 June 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLw-DN-tcx">
+                                <rect key="frame" x="20" y="122" width="80.5" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="L2P-Zw-Cmp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cabin-Italic" family="Cabin" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4:28 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2d-ZO-Bqu">
+                                <rect key="frame" x="110.5" y="122" width="50" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="rWh-vc-fcU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cabin-Italic" family="Cabin" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWH-Nj-VSY">
+                                <rect key="frame" x="189" y="120" width="115" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="fFd-4E-QG1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Request Car">
+                                    <color key="titleColor" red="0.3969835639" green="0.17684513330000001" blue="0.56257545949999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZM-E6-Ct5">
+                                <rect key="frame" x="20" y="59" width="82.5" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Dubai Mall" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGR-ZG-oFF">
+                                <rect key="frame" x="20" y="78.5" width="97.5" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="15"/>
+                                <color key="textColor" red="0.31764705882352939" green="0.14117647058823529" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valet Parking Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8SB-fK-NMT">
+                                <rect key="frame" x="192" y="59" width="108" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 AED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQI-Ff-SZ6">
+                                <rect key="frame" x="249" y="78.5" width="51" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="15"/>
+                                <color key="textColor" red="0.31764705879999999" green="0.14117647059999999" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hWH-Nj-VSY" firstAttribute="top" secondItem="moX-dm-GFS" secondAttribute="bottom" constant="10" id="1Xs-FP-3yg"/>
+                            <constraint firstItem="BdB-p1-ZL0" firstAttribute="leading" secondItem="MTS-J4-fWa" secondAttribute="leading" constant="20" id="65C-42-hWH"/>
+                            <constraint firstAttribute="trailing" secondItem="moX-dm-GFS" secondAttribute="trailing" id="8CL-H8-gUI"/>
+                            <constraint firstItem="BdB-p1-ZL0" firstAttribute="top" secondItem="MTS-J4-fWa" secondAttribute="top" constant="15" id="D2e-by-uB6"/>
+                            <constraint firstItem="vQI-Ff-SZ6" firstAttribute="trailing" secondItem="8SB-fK-NMT" secondAttribute="trailing" id="GNa-mv-s9c"/>
+                            <constraint firstAttribute="trailing" secondItem="hWH-Nj-VSY" secondAttribute="trailing" constant="16" id="OM5-yx-8he"/>
+                            <constraint firstItem="tTp-AY-oN4" firstAttribute="top" secondItem="eR9-9D-vbm" secondAttribute="bottom" constant="2" id="RC0-iZ-NM8"/>
+                            <constraint firstItem="3ni-zR-nkJ" firstAttribute="leading" secondItem="BdB-p1-ZL0" secondAttribute="leading" id="RWZ-G9-Eur"/>
+                            <constraint firstItem="2ZM-E6-Ct5" firstAttribute="top" secondItem="3ni-zR-nkJ" secondAttribute="bottom" constant="8" id="RrF-eZ-Xvf"/>
+                            <constraint firstItem="8SB-fK-NMT" firstAttribute="top" secondItem="2ZM-E6-Ct5" secondAttribute="top" id="THL-wT-Ocf"/>
+                            <constraint firstItem="tTp-AY-oN4" firstAttribute="trailing" secondItem="eR9-9D-vbm" secondAttribute="trailing" id="Tav-43-rkb"/>
+                            <constraint firstItem="3ni-zR-nkJ" firstAttribute="top" secondItem="BdB-p1-ZL0" secondAttribute="bottom" constant="2" id="UTz-mm-Pgf"/>
+                            <constraint firstAttribute="trailing" secondItem="eR9-9D-vbm" secondAttribute="trailing" constant="20" id="Woa-jK-gcH"/>
+                            <constraint firstItem="2ZM-E6-Ct5" firstAttribute="leading" secondItem="BdB-p1-ZL0" secondAttribute="leading" id="c3k-x6-r5R"/>
+                            <constraint firstItem="eR9-9D-vbm" firstAttribute="top" secondItem="MTS-J4-fWa" secondAttribute="top" constant="15" id="jpa-Zk-NDf"/>
+                            <constraint firstItem="yLw-DN-tcx" firstAttribute="leading" secondItem="MTS-J4-fWa" secondAttribute="leading" constant="20" id="nRb-Ag-WIS"/>
+                            <constraint firstItem="j2d-ZO-Bqu" firstAttribute="leading" secondItem="yLw-DN-tcx" secondAttribute="trailing" constant="10" id="okQ-gU-cdA"/>
+                            <constraint firstItem="VGR-ZG-oFF" firstAttribute="leading" secondItem="2ZM-E6-Ct5" secondAttribute="leading" id="qtM-6I-7gV"/>
+                            <constraint firstItem="8SB-fK-NMT" firstAttribute="trailing" secondItem="tTp-AY-oN4" secondAttribute="trailing" id="sYk-2Y-gXP"/>
+                            <constraint firstItem="VGR-ZG-oFF" firstAttribute="top" secondItem="2ZM-E6-Ct5" secondAttribute="bottom" constant="2" id="tKp-KI-1UM"/>
+                            <constraint firstItem="moX-dm-GFS" firstAttribute="leading" secondItem="MTS-J4-fWa" secondAttribute="leading" id="w3z-TY-Ook"/>
+                            <constraint firstItem="j2d-ZO-Bqu" firstAttribute="top" secondItem="moX-dm-GFS" secondAttribute="bottom" constant="12" id="xij-mW-S29"/>
+                            <constraint firstItem="vQI-Ff-SZ6" firstAttribute="top" secondItem="8SB-fK-NMT" secondAttribute="bottom" constant="2" id="ybo-zf-wBs"/>
+                            <constraint firstAttribute="bottom" secondItem="hWH-Nj-VSY" secondAttribute="bottom" constant="10" id="z1B-Qt-X7c"/>
+                            <constraint firstItem="yLw-DN-tcx" firstAttribute="top" secondItem="moX-dm-GFS" secondAttribute="bottom" constant="12" id="zKh-rK-nht"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="MTS-J4-fWa" secondAttribute="bottom" constant="10" id="4Qb-NC-NDE"/>
+                    <constraint firstItem="MTS-J4-fWa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="OYS-Xj-89P"/>
+                    <constraint firstItem="MTS-J4-fWa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="QD0-6x-Xtd"/>
+                    <constraint firstAttribute="trailing" secondItem="MTS-J4-fWa" secondAttribute="trailing" id="ZSj-4o-H0u"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblAmount" destination="vQI-Ff-SZ6" id="df9-CP-qFa"/>
+                <outlet property="mCarNo" destination="eR9-9D-vbm" id="RAW-6Q-2CJ"/>
+                <outlet property="mCarNoLabel" destination="tTp-AY-oN4" id="DBM-Wb-Cf9"/>
+                <outlet property="mDateLabel" destination="yLw-DN-tcx" id="v01-XE-yZa"/>
+                <outlet property="mRequestCarBtn" destination="hWH-Nj-VSY" id="IEK-WA-qrj"/>
+                <outlet property="mTicketId" destination="BdB-p1-ZL0" id="TsZ-bR-v3W"/>
+                <outlet property="mTicketNo" destination="3ni-zR-nkJ" id="Lnb-Nj-B6S"/>
+                <outlet property="mTicketView" destination="MTS-J4-fWa" id="B9Z-BG-Jo3"/>
+                <outlet property="mTimeLabel" destination="j2d-ZO-Bqu" id="80c-6f-fzE"/>
+                <outlet property="mallLabel" destination="VGR-ZG-oFF" id="pcc-Av-B0H"/>
+            </connections>
+            <point key="canvasLocation" x="19.199999999999999" y="124.13793103448276"/>
+        </tableViewCell>
+    </objects>
+</document>

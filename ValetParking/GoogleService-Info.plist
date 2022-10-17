@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>477382176607-9lo3m69qem9aq1mt1eaffcuaqdsn7f14.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.477382176607-9lo3m69qem9aq1mt1eaffcuaqdsn7f14</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>477382176607-onl8tep1kaprjghmbhlgdl3p5c7t9mtf.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyABQpseAOQcjTSHgw6SPHyZYt9G9RZy6co</string>
+	<key>GCM_SENDER_ID</key>
+	<string>477382176607</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mechuni.user</string>
+	<key>PROJECT_ID</key>
+	<string>mechuni-1645690668058</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mechuni-1645690668058.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:477382176607:ios:907c3b0236aa20153290ea</string>
+</dict>
+</plist>

@@ -1,0 +1,6 @@
+framework module MTSlideToOpen {
+  umbrella header "MTSlideToOpen-umbrella.h"
+
+  export *
+  module * { export * }
+}

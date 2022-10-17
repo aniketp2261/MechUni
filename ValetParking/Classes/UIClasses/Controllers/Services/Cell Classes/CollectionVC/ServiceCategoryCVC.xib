@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="poppins_regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ServiceCategoryCVC" customModule="ValetParking" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="125" height="140"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="125" height="140"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dr7-mM-Qnk">
+                        <rect key="frame" x="0.0" y="0.0" width="125" height="140"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HrE-7M-McD">
+                                <rect key="frame" x="15" y="15" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="C5k-NK-70y"/>
+                                    <constraint firstAttribute="height" constant="65" id="Zcm-tF-hvo"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xoR-U4-LDe">
+                                <rect key="frame" x="90" y="20" width="25" height="55"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCarGray" translatesAutoresizingMaskIntoConstraints="NO" id="WfC-Fj-doO">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="6sd-1z-qef"/>
+                                            <constraint firstAttribute="height" constant="25" id="H1D-qd-1yY"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icBikeGray" translatesAutoresizingMaskIntoConstraints="NO" id="uZh-mW-9RT">
+                                        <rect key="frame" x="0.0" y="30" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="Hnt-f5-REu"/>
+                                            <constraint firstAttribute="height" constant="25" id="eMB-Y9-4OK"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hj4-Fp-68k">
+                                <rect key="frame" x="15" y="90" width="95" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                <color key="textColor" name="PrimaryColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Hj4-Fp-68k" firstAttribute="top" secondItem="HrE-7M-McD" secondAttribute="bottom" constant="10" id="EWc-2i-bI0"/>
+                            <constraint firstItem="HrE-7M-McD" firstAttribute="leading" secondItem="dr7-mM-Qnk" secondAttribute="leading" constant="15" id="MNI-1s-XXL"/>
+                            <constraint firstItem="Hj4-Fp-68k" firstAttribute="leading" secondItem="dr7-mM-Qnk" secondAttribute="leading" constant="15" id="U0s-RC-ErR"/>
+                            <constraint firstItem="HrE-7M-McD" firstAttribute="top" secondItem="dr7-mM-Qnk" secondAttribute="top" constant="15" id="Vnu-sA-UMl"/>
+                            <constraint firstItem="xoR-U4-LDe" firstAttribute="centerY" secondItem="HrE-7M-McD" secondAttribute="centerY" id="akH-Xi-bHF"/>
+                            <constraint firstAttribute="trailing" secondItem="Hj4-Fp-68k" secondAttribute="trailing" constant="15" id="sKZ-jV-Mhf"/>
+                            <constraint firstItem="xoR-U4-LDe" firstAttribute="leading" secondItem="HrE-7M-McD" secondAttribute="trailing" constant="10" id="sz0-HG-gs0"/>
+                            <constraint firstAttribute="trailing" secondItem="xoR-U4-LDe" secondAttribute="trailing" constant="10" id="tka-I9-nOl"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="dr7-mM-Qnk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LAn-Mw-yEW"/>
+                <constraint firstAttribute="bottom" secondItem="dr7-mM-Qnk" secondAttribute="bottom" id="QhE-Dr-lWg"/>
+                <constraint firstAttribute="trailing" secondItem="dr7-mM-Qnk" secondAttribute="trailing" id="ivc-ai-e80"/>
+                <constraint firstItem="dr7-mM-Qnk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ncc-Ke-IjX"/>
+            </constraints>
+            <size key="customSize" width="200" height="146"/>
+            <connections>
+                <outlet property="CategoryImg" destination="HrE-7M-McD" id="ebk-aF-72R"/>
+                <outlet property="CategoryNameLbl" destination="Hj4-Fp-68k" id="kSW-1C-RC3"/>
+                <outlet property="FourWheelerImg" destination="WfC-Fj-doO" id="u9X-dz-LaF"/>
+                <outlet property="TwoWheelerImg" destination="uZh-mW-9RT" id="2Ia-uQ-GSv"/>
+            </connections>
+            <point key="canvasLocation" x="129.71014492753625" y="81.696428571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icBikeGray" width="31" height="22"/>
+        <image name="icCarGray" width="27" height="22"/>
+        <namedColor name="PrimaryColor">
+            <color red="0.31400001049041748" green="0.31400001049041748" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
