@@ -71,18 +71,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PopUpViewDelegate,Notific
         firebasepushNotification()
         startLocation()
         launchScreen()
-//        let isLoggedin =  UserDefaults.standard.string(forKey: "isLoggedin")
-//        if Connectivity.isConnectedToInternet {
-//            print("Connected AppDelegate")
-//            if(isLoggedin == "1") {
-//               moveToHome()
-//            } else {
-//               moveToLogin()
-//            }
-//        } else{
-//            print("No internet connection AppDelegate")
-//            moveToConnectionCheck()
-//        }
         return true
     }
     func application(

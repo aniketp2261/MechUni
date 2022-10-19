@@ -370,8 +370,8 @@ extension ProviderDetailsVC{
                                         self.CartView.isHidden = true
                                         self.CartViewHeight.constant = 0
                                     } else{
-                                        let isLoggedin = UserDefaults.standard.string(forKey: "isLoggedin") ?? "0"
-                                        if(isLoggedin == "1") {
+                                        let isLoggedin = UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
+                                        if(isLoggedin == true) {
                                             self.CartView.isHidden = false
                                             self.CartViewHeight.constant = 55
                                             self.AddedItemLbl.text = "\(count) item | Rs.\(totalAmount)"

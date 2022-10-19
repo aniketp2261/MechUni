@@ -69,18 +69,6 @@ class TicketsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         
         self.mTicketsTV.register(UINib(nibName: "TicketTVCell", bundle: nil), forCellReuseIdentifier: "TicketTVCell")
         self.mTicketsTV.register(UINib(nibName: "CompleteTicketCell", bundle: nil), forCellReuseIdentifier: "CompleteTicketCell")
-//        let isLoggedin =  UserDefaults.standard.string(forKey: "isLoggedin")
-//        if(isLoggedin == "1")
-//        {
-//           displayTickets()
-//        }
-//        else
-//        {
-//            let alert = UIAlertView(title: "", message: "Login is required to access this feature", delegate: self, cancelButtonTitle: "GO TO LOGIN",  otherButtonTitles: "CANCEL")
-//            alert.tag = 100
-//            alert.show()
-//        }
-//
         self.vwSuccess.isHidden = true
 
         mTextView.text = "Type your text"
@@ -135,8 +123,8 @@ class TicketsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let isLoggedin = UserDefaults.standard.string(forKey: "isLoggedin") ?? "0"
-        if(isLoggedin == "1")
+        let isLoggedin = UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
+        if(isLoggedin == true)
         {
             if mSelectedType == "progress" {
                 self.mProgressActn(nil)

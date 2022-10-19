@@ -77,7 +77,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, G
     var isRefresh = 0
     var AppVersion = ""
     var appId = ""
-    var isLoggedin = UserDefaults.standard.string(forKey: "isLoggedin")!
+    var isLoggedin = Bool()
     var custCareNo = ""
     
     override func viewDidLoad() {
@@ -85,7 +85,6 @@ class HomeVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, G
 //      searchTF.delegate = self
         AppVersion = Bundle.main.releaseVersionNumber ?? ""
         print("AppVersion: \(AppVersion) -- \(Bundle.main.bundleIdentifier)")
-        print("isLoggedin: \(isLoggedin)")
         initChildVCs()
         carBtnShadowView.shadowCornerRadius = carBtnShadowView.bounds.height/2
         bikeBtnShadowView.shadowCornerRadius = bikeBtnShadowView.bounds.height/2
@@ -157,7 +156,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, G
         mechbrainVC?.MechbrainSheetVCDelegate = self
     }
     @objc func observeNearby(_ notif:Notification){
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
             let obj = notif.object as? NearbyPlaceModel
             parkingDetailVC?.nearbyPlaceModel = obj
@@ -176,12 +175,14 @@ class HomeVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, G
         }
     }
     @objc func hamburgersMenuAction(){
-        let vc = storyboard?.instantiateViewController(withIdentifier: "MenuAlertVC") as! MenuAlertVC
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MenuAlertVC") as! MenuAlertVC
         vc.delegate = self
         present(vc, animated: true, completion: nil)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        isLoggedin = UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
+        print("isLoggedin: \(isLoggedin)")
         UserDefaults.standard.setValue("home", forKey: "SelectedTab")
         NotificationCenter.default.addObserver(self, selector: #selector(LogoutAction), name: NSNotification.Name(rawValue: "MenuScreenAppear"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(observeProfileDismissal(_:)), name: NSNotification.Name(rawValue: NotificationKeys.didProfileDisappeared.rawValue), object: nil)
@@ -267,11 +268,10 @@ class HomeVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, G
         } else if alertView.tag == 50{
             print("EditProfileAlertButtonIndex---\(buttonIndex)")
             if buttonIndex == 1{
-//                UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: false){
                 bottomSheetFpc.dismiss(animated: true){
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LogoutEvent"), object: nil)
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let myVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+                    UserDefaults.standard.setValue(false, forKey: "isLoggedin")
+                    let myVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
                     self.navigationController?.pushViewController(myVC, animated: false)
                 }
             } else{
@@ -449,12 +449,11 @@ class HomeVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, G
         return newImage
     }
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
             for nearby in self.nearbyPlacesArray{
                 if nearby.parkingName == marker.title{
                     print("TappedMarkerName --- \(marker.title)")
-                    UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationKeys.notificationParkingDetails.rawValue), object: nearby)
                     break
                 }
@@ -485,7 +484,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, G
             self.bottomSheetFpc.view.removeFromSuperview()
             self.bottomSheetFpc.removeFromParent()
         }
-        let vc = storyboard?.instantiateViewController(withIdentifier: "MenuAlertVC") as! MenuAlertVC
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MenuAlertVC") as! MenuAlertVC
         present(vc, animated: true, completion: nil)
     }
     @IBAction func bikeButtonAction(){
@@ -550,8 +549,8 @@ class HomeVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, G
         }
     }
     @IBAction func scannerButtonAction(){
-        if (isLoggedin == "1"){
-            let vc = storyboard?.instantiateViewController(withIdentifier: "ParkingScannerVC") as! ParkingScannerVC
+        if (isLoggedin == true){
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ParkingScannerVC") as! ParkingScannerVC
             vc.SearchPlaceVc = false
             self.navigationController?.pushViewController(vc, animated: false)
         } else{
@@ -744,8 +743,8 @@ class HomeVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, G
                                     if count == "0"{
                                         AlertFunctions.showAlert(message: "", title: "Cart is Empty !", image: nil)
                                     } else{
-                                        let isLoggedin =  UserDefaults.standard.string(forKey: "isLoggedin")!
-                                        if(isLoggedin == "1")
+                                        let isLoggedin = UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
+                                        if(isLoggedin == true)
                                         {
                                             let vc = UIStoryboard(name: "Services", bundle: nil).instantiateViewController(withIdentifier: "CartDetailsVC") as! CartDetailsVC
                                             vc.CartDelegate = self
@@ -924,7 +923,7 @@ extension HomeVC: HomeVCDelegate {
         navigationController?.pushViewController(searchPlaceVC!, animated: false)
     }
     func ParkingPlaceAction(nearbyModel: NearbyPlaceModel){
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
             parkingDetailVC?.nearbyPlaceModel = nearbyModel
             bottomSheetFpc.contentViewController = parkingDetailVC
@@ -933,9 +932,9 @@ extension HomeVC: HomeVCDelegate {
         }
     }
     func searchParkingAction(){
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "SearchAllVC") as! SearchAllVC
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchAllVC") as! SearchAllVC
             vc.searchParkingDelegate = self
             navigationController?.pushViewController(vc, animated: true)
         } else{
@@ -946,7 +945,7 @@ extension HomeVC: HomeVCDelegate {
         bottomSheetFpc.contentViewController = mechbrainVC
     }
     func insuranceAction(){
-        let vc = storyboard?.instantiateViewController(withIdentifier: "InsuranceVC") as! InsuranceVC
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InsuranceVC") as! InsuranceVC
         vc.InsuranceVCDelegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -954,7 +953,7 @@ extension HomeVC: HomeVCDelegate {
         bottomSheetFpc.contentViewController = servicesVC
     }
     func nearbyServices(provider: NearbyServiceProviderModel) {
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
             let vc = UIStoryboard(name: "Services", bundle: nil).instantiateViewController(withIdentifier: "ProviderDetailsVC") as! ProviderDetailsVC
             vc.ProviderID = provider.id
@@ -965,7 +964,7 @@ extension HomeVC: HomeVCDelegate {
         }
     }
     func myOrdersTapped(Order: OrderListModel) {
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
             let orderId = Order.orderID
             UserDefaults.standard.setValue(orderId, forKey: "OrderID")
@@ -981,7 +980,7 @@ extension HomeVC: HomeVCDelegate {
 // MARK:- ParkingPlaceVCDelegate extension
  extension HomeVC: ParkingPlaceVCDelegate {
     func sliderReachedToEnd(model: NearbyPlaceModel?) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "MyCarsVC") as! MyCarsVC
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyCarsVC") as! MyCarsVC
         vc.nearbyModel = model
         vc.myCarsDelegate = self
         navigationController?.pushViewController(vc, animated: true)
@@ -1013,7 +1012,7 @@ extension HomeVC: HomeVCDelegate {
         bottomSheetFpc.contentViewController = mechbrainVC
     }
     func ParkingInsuranceAction(){
-        let vc = storyboard?.instantiateViewController(withIdentifier: "InsuranceVC") as! InsuranceVC
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InsuranceVC") as! InsuranceVC
         vc.InsuranceVCDelegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -1025,7 +1024,7 @@ extension HomeVC: HomeVCDelegate {
         navigationController?.pushViewController(ticketDetailVC!, animated: true)
     }
     func ParkingPlaceClickAction(nearbyModel: NearbyPlaceModel){
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
             if nearbyPlacesArray.count != 0{
                 parkingDetailVC?.nearbyPlaceModel = nearbyModel
@@ -1036,9 +1035,9 @@ extension HomeVC: HomeVCDelegate {
         }
     }
     func ParkingSearchListAction(){
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "SearchParkingVC") as! SearchParkingVC
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchParkingVC") as! SearchParkingVC
             vc.searchParkingDelegate = self
             vc.nearbyPlacesArray = nearbyPlacesArray
             navigationController?.pushViewController(vc, animated: true)
@@ -1067,7 +1066,7 @@ extension HomeVC: HomeVCDelegate {
         bottomSheetFpc.contentViewController = parkingVC
     }
     func ServicesSearchListAction(){
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
             let vc = UIStoryboard(name: "Services", bundle: nil).instantiateViewController(withIdentifier: "SearchServicesVC") as! SearchServicesVC
             vc.searchServiceDelegate = self
@@ -1081,12 +1080,12 @@ extension HomeVC: HomeVCDelegate {
         bottomSheetFpc.contentViewController = mechbrainVC
     }
     func ServicesInsuranceServicesAction(){
-        let vc = storyboard?.instantiateViewController(withIdentifier: "InsuranceVC") as! InsuranceVC
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InsuranceVC") as! InsuranceVC
         vc.InsuranceVCDelegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func ServicesServicesByCategory(Category: CategoriesModel){
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
             bottomSheetFpc.dismiss(animated: true, completion: nil)
 //            UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
@@ -1099,7 +1098,7 @@ extension HomeVC: HomeVCDelegate {
         }
     }
     func ServicesNearbyServicesClick(provider: NearbyServiceProviderModel) {
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
             bottomSheetFpc.dismiss(animated: true, completion: nil)
 //            UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
@@ -1148,12 +1147,12 @@ extension HomeVC: MechbrainVCDelegate{
         print("mechBrainAction")
     }
     func MechbrainInsuranceAction(){
-        let vc = storyboard?.instantiateViewController(withIdentifier: "InsuranceVC") as! InsuranceVC
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InsuranceVC") as! InsuranceVC
         vc.InsuranceVCDelegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func MechbrainServicesByCategory(Category: CategoriesModel){
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
             bottomSheetFpc.dismiss(animated: true, completion: nil)
 //            UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
@@ -1166,7 +1165,7 @@ extension HomeVC: MechbrainVCDelegate{
         }
     }
     func MechbrainNearbyServicesClick(provider: NearbyServiceProviderModel){
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
             bottomSheetFpc.dismiss(animated: true, completion: nil)
             let vc = UIStoryboard(name: "Mechbrain", bundle: nil).instantiateViewController(withIdentifier: "MechbrainProviderDetailsVC") as! MechbrainProviderDetailsVC
@@ -1178,7 +1177,7 @@ extension HomeVC: MechbrainVCDelegate{
         }
     }
     func MechbrainSearchListAction(){
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
             let vc = UIStoryboard(name: "Mechbrain", bundle: nil).instantiateViewController(withIdentifier: "SearchMechbrainServicesVC") as! SearchMechbrainServicesVC
             vc.searchServiceDelegate = self

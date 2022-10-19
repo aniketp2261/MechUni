@@ -102,8 +102,8 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
            // cell.mBtn.tag = indexPath.row
            // cell.mBtn.addTarget(self, action:#selector(goToProfile(_:)), for: UIControlEvents.touchUpInside)
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
-            let isLoggedin =  UserDefaults.standard.string(forKey: "isLoggedin") ?? "0"
-            if(isLoggedin == "1")
+            let isLoggedin =  UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
+            if(isLoggedin == true)
             { 
                 
                 var currentDefaults = UserDefaults.standard
@@ -141,8 +141,8 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "LeftViewCell", for: indexPath) as! LeftViewCell
-            let isLoggedin =  UserDefaults.standard.string(forKey: "isLoggedin")
-            if(isLoggedin == "1")
+            let isLoggedin =  UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
+            if(isLoggedin == true)
             {
                 cell.mLabel.text = titlesArray[indexPath.row]
                 cell.mImageView.image = UIImage(named: titlesArrayIcon[indexPath.row] as? String ?? "")
@@ -296,14 +296,14 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
          
         else {
-            let isLoggedin =  UserDefaults.standard.string(forKey: "isLoggedin")
-            if(isLoggedin == "1")
+            let isLoggedin =  UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
+            if(isLoggedin == true)
             {
-                var alert = UIAlertView(title: "VALET PARKING", message: "Are you sure to want to logout?", delegate: self, cancelButtonTitle: "NO", otherButtonTitles: "YES")
+                var alert = UIAlertView(title: "Mechuni", message: "Are you sure to want to logout?", delegate: self, cancelButtonTitle: "NO", otherButtonTitles: "YES")
                 alert.tag = 100
                 alert.show()
             } else {
-                UserDefaults.standard.setValue("0", forKey: "isLoggedin")
+                UserDefaults.standard.setValue(false, forKey: "isLoggedin")
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let myVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
                     if let aVC = myVC {
@@ -320,13 +320,12 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if alertView.tag == 100 {
             if buttonIndex == 1 {
-                UserDefaults.standard.setValue("0", forKey: "isLoggedin")
-                                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                let myVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
-                                if let aVC = myVC {
-                                    Constants.kNavigationController?.pushViewController(aVC, animated: true)
-                                }
-               // Constants.appDelegate?.moveToLogin()
+                UserDefaults.standard.setValue(false, forKey: "isLoggedin")
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let myVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
+                if let aVC = myVC {
+                    Constants.kNavigationController?.pushViewController(aVC, animated: true)
+                }
             }
         }else if alertView.tag == 101 {
             

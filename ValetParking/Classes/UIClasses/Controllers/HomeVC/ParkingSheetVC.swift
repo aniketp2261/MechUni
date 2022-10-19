@@ -424,17 +424,17 @@ class ParkingSheetVC: UIViewController, UIAlertViewDelegate {
 }
 extension ParkingSheetVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let isLoggedin = UserDefaults.standard.string(forKey: "isLoggedin") ?? "0"
+        let isLoggedin = UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
         if collectionView == nearbyParkingPlaceCollectionView{
             return nearbyPlacesArray.count
         } else if collectionView == ticketCollectionView{
-            if(isLoggedin == "1"){
+            if(isLoggedin == true){
                 return ticketArray.count
             } else{
                 return 0
             }
         } else if collectionView == MyOrdersCollectionView{
-            if(isLoggedin == "1"){
+            if(isLoggedin == true){
                 print("OrdersCount --\(OrderList.count)")
                 return OrderList.count
             } else{

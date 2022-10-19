@@ -47,7 +47,7 @@ class ParkingVC: UIViewController, UIAlertViewDelegate {
     var ParkingVCDel: ParkingVCDelegate? = nil
     var parkingPlacesArray: [NearbyPlaceModel] = []
     var ticketArray: [GetTicketDataModel] = []
-    var isLoggedin = UserDefaults.standard.string(forKey: "isLoggedin") ?? "0"
+    var isLoggedin = UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -165,7 +165,7 @@ class ParkingVC: UIViewController, UIAlertViewDelegate {
                                 let generatedTime = result["generated_time"] as? String ?? ""
                                 let model = GetTicketDataModel(id: id, carPickUpStatus: carPickUpStatus, paymentDoneStatus: paymentDoneStatus, idParkingManagement: idParkingManagement, ticketID: ticketId, generatedOn: generatedOn, parkingName: parkingName, parkingImage: parkingImg, generatedDate: generatedDate, address: address, plateNo: plateNo, generatedTime: generatedTime)
                                 print("getParkingData0000 ---- \(model)")
-                                if(self.isLoggedin == "1")
+                                if(self.isLoggedin == true)
                                 {
                                     self.ticketArray.append(model)
                                 }

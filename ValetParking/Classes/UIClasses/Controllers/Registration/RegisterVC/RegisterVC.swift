@@ -259,7 +259,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UIImagePickerController
 //                                        self.view.makeToast("Your otp is \(dict["otp"] as? String ?? "0000")")
                                         DispatchQueue.main.async {
                                             self.timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
-                                                UserDefaults.standard.setValue("1", forKey: "isLoggedin")
+                                                UserDefaults.standard.setValue(true, forKey: "isLoggedin")
                                                 SKActivityIndicator.dismiss()
                                                 self.navigationController?.pushViewController(vc, animated: true)
                                             }

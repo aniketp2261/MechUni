@@ -68,7 +68,7 @@ class ServicesVC: UIViewController, UIAlertViewDelegate {
     var ServicesRad = true
     var LocationRad = false
     let dateFormatter = DateFormatter()
-    var isLoggedin = UserDefaults.standard.string(forKey: "isLoggedin")
+    var isLoggedin = UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -347,7 +347,7 @@ class ServicesVC: UIViewController, UIAlertViewDelegate {
                                 let orderItems = result["order_items"] as? [[String:Any]] ?? []
                                 let model = OrderListModel(id: id, orderID: orderId, customerId: customerId, providerId: providerId, orderStatus: orderStatus, orderAmount: orderAmount, createdAt: createdAt, providerAddr: providerAddress, providerName: providerName, providerImage: providerImage, vehicleId: vehicleId, vehicleNo: vehicleNo, vehicleType: vehicleType, orderConfirm: orderConfirm, orderPickup: orderPickup, inprogress: inprogress, completed: completed, payment: payment)
                                 print("OrderList---\(model)")
-                                if(self.isLoggedin == "1")
+                                if(self.isLoggedin == true)
                                 {
                                     self.OrderList.append(model)
                                 }

@@ -76,7 +76,7 @@ class OrderDetailsVC: UIViewController {
         OrderDetailsVCDelegate?.shouldNavBack()
     }
     @objc func helpBtnPressed(){
-        let Vc = storyboard?.instantiateViewController(withIdentifier: "ComplaintVC") as! ComplaintVC
+        let Vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ComplaintVC") as! ComplaintVC
         Vc.TicketID = self.OrderIDLbl.text
         present(Vc, animated: true,completion: nil)
     }
@@ -332,7 +332,6 @@ extension OrderDetailsVC : UITableViewDelegate,UITableViewDataSource{
                     print("OrderServices---\(OrderServices)")
                     cell.selectionStyle = .none
                     cell.getData(OrderServices: self.OrderServices)
-//                  cell.OrderServices = OrderServices
                     cell.TotalCharges.text = "Rs.\(OrderDetails?.orderAmount ?? "").0"
                     cell.backView.layer.shadowColor = UIColor.black.cgColor
                     cell.backView.layer.shadowOffset = CGSize(width: 0, height: 3)

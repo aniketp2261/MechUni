@@ -43,7 +43,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         if isLoggedIn() {
             print("Already FacebookLogin")
             // Show the ViewController with the logged in user
@@ -51,10 +50,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             print("Facebook Logout")
             // Show the Home ViewController
         }
-        
         btnEye.setImage(UIImage(named: "eyeD24px"), for: .normal)
-//         sideMenuController?.isLeftViewSwipeGestureEnabled = false
-        
         self.mEmailView.layer.cornerRadius = 20
         self.mPasswordView.layer.cornerRadius = 20
         self.mLoginBtn.layer.cornerRadius = 20
@@ -147,12 +143,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     }
     // Button Actions
     @IBAction func mSkipActn(_ sender: Any) {
-   
+        UserDefaults.standard.setValue(false, forKey: "isLoggedin")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
         self.navigationController?.pushViewController(vc, animated: true)
-       // Constants.appDelegate?.moveToHome()
-
     }
     
     @IBAction func hideShowPassword(_ sender: Any) {
@@ -217,7 +211,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                                 let status = JSON["status"] as? String
                                 if status == "success" {
                                     SKActivityIndicator.dismiss()
-                                    UserDefaults.standard.setValue("1", forKey: "isLoggedin")
+                                    UserDefaults.standard.setValue(true, forKey: "isLoggedin")
                                     let contentArr = JSON["result"] as? NSArray
                                     if contentArr?.count != 0
                                     {
@@ -239,6 +233,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                                         
                                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                                         let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+                                        vc.isLoggedin = true
                                         self.navigationController?.pushViewController(vc, animated: true)
                                     }
                                 }else{
@@ -289,7 +284,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                             let results = apiDict["result"] as? [[String:Any]] ?? []
                             print("Socialloginresults--- \(results)")
                             for result in results{
-                                UserDefaults.standard.setValue("1", forKey: "isLoggedin")
+                                UserDefaults.standard.setValue(true, forKey: "isLoggedin")
                                 let verified = result["verified"] as? String ?? ""
                                 let id = String(result["_id"] as? Int ?? 0)
                                 let email = result["email"] as? String ?? ""

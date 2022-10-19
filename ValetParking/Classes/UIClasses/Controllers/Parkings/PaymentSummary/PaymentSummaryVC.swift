@@ -147,7 +147,7 @@ class PaymentSummaryVC: UIViewController {
         }
     }
     @objc func ApplyCouponsAction(){
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ApplyOffersVC") as! ApplyOffersVC
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ApplyOffersVC") as! ApplyOffersVC
         vc.couponModel = couponModel
         vc.couponArray = couponArray
         present(vc, animated: true, completion: nil)
@@ -356,7 +356,7 @@ class PaymentSummaryVC: UIViewController {
 extension PaymentSummaryVC: RazorpayPaymentCompletionProtocol{
     func onPaymentError(_ code: Int32, description str: String) {
         print("onPaymentError \(str)")
-        let controller = storyboard?.instantiateViewController(withIdentifier: "CCAvenueVC") as! CCAvenueVC
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CCAvenueVC") as! CCAvenueVC
         controller.CouponApplied = self.CouponApplied
         controller.ticketModel = self.ticketModel
         controller.applyCoupon = self.applyCoupon
@@ -366,7 +366,7 @@ extension PaymentSummaryVC: RazorpayPaymentCompletionProtocol{
     }
     func onPaymentSuccess(_ payment_id: String) {
         print("onPaymentSuccess \(payment_id)")
-        let controller = storyboard?.instantiateViewController(withIdentifier: "CCAvenueVC") as! CCAvenueVC
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CCAvenueVC") as! CCAvenueVC
         controller.ticketModel = self.ticketModel
         controller.applyCoupon = self.applyCoupon
         controller.CouponApplied = self.CouponApplied
@@ -402,7 +402,7 @@ extension PaymentSummaryVC{
                             let msg = apiDict["message"] as? String
                             self.view.makeToast(msg)
                             DispatchQueue.main.async {
-                                let controller = self.storyboard?.instantiateViewController(withIdentifier: "CCAvenueVC") as! CCAvenueVC
+                                let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CCAvenueVC") as! CCAvenueVC
                                 controller.transactionId = "Amount Paid.."
                                 controller.cashpaid = true
                                 if self.CouponApplied == true{

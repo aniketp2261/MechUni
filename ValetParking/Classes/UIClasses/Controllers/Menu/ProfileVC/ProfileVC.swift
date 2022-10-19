@@ -107,7 +107,7 @@ class ProfileVC: UIViewController, UIAlertViewDelegate  {
         self.mLastNameTF.text = UserDefaults.standard.string(forKey: "lastname")
         self.mEmailTF.text = UserDefaults.standard.string(forKey: "email")
         self.mDOBTF.text = UserDefaults.standard.string(forKey: "dob")
-        let isLoggedin = UserDefaults.standard.string(forKey: "isLoggedin") ?? "0"
+        let isLoggedin = UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
         let url = UserDefaults.standard.string(forKey: "userImage") ?? ""
         if url == "" {
             print("IFUrlll---\(url)")
@@ -116,7 +116,7 @@ class ProfileVC: UIViewController, UIAlertViewDelegate  {
             print("ELSEUrlll---\(url)")
             self.mImageView.sd_setImage(with: URL(string: APIEndPoints.BASE_IMAGE_URL + url), placeholderImage: #imageLiteral(resourceName: "UserImage"), options: [], context: nil)
         }
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
             self.mContentView.isHidden = false
         }
@@ -147,8 +147,8 @@ class ProfileVC: UIViewController, UIAlertViewDelegate  {
         return emailTest.evaluate(with: testStr)
     }
     func refeshUI(){
-        var isLoggedin = UserDefaults.standard.string(forKey: "isLoggedin") ?? "0"
-        if(isLoggedin == "1")
+        let isLoggedin = UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
+        if(isLoggedin == true)
         {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
             let currentDefaults = UserDefaults.standard

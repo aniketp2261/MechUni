@@ -33,7 +33,7 @@ class ParkingScannerVC: UIViewController {
     @IBOutlet var messageLabel: UILabel!
     @IBOutlet var topBar: UIView!
     @IBOutlet weak var ScanView: UIView!
-
+    @IBOutlet weak var ReScanImg: UIImageView!
 
     var fpc = FloatingPanelController()
     var QRArray: [QrArrayData] = []
@@ -92,6 +92,7 @@ class ParkingScannerVC: UIViewController {
             print(error)
             return
         }
+        ReScanImg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(reScanAction)))
     }
     override var preferredStatusBarStyle: UIStatusBarStyle{
         .lightContent
@@ -99,7 +100,7 @@ class ParkingScannerVC: UIViewController {
     private func showBottomSheet(model:NearbyPlaceModel){
         let appearance = SurfaceAppearance()
         appearance.cornerRadius = 30
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ParkingPlaceVC") as! ParkingPlaceVC
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ParkingPlaceVC") as! ParkingPlaceVC
         fpc.delegate = self
         fpc.contentViewController = vc
         vc.parkingPlaceDelegate = self
@@ -117,6 +118,10 @@ class ParkingScannerVC: UIViewController {
         } else{
             navigationController?.popViewController(animated: false)
         }
+    }
+    @objc func reScanAction(){
+        fpc.dismiss(animated: true, completion: nil)
+        captureSession.startRunning()
     }
 }
 
@@ -163,7 +168,7 @@ extension ParkingScannerVC: AVCaptureMetadataOutputObjectsDelegate {
 }
 extension ParkingScannerVC: ParkingPlaceVCDelegate {
    func sliderReachedToEnd(model: NearbyPlaceModel?) {
-       let vc = storyboard?.instantiateViewController(withIdentifier: "MyCarsVC") as! MyCarsVC
+       let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyCarsVC") as! MyCarsVC
        vc.nearbyModel = model
         vc.myCarsDelegate = self
        navigationController?.pushViewController(vc, animated: true)

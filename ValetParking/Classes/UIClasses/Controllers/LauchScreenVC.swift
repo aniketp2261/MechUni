@@ -30,17 +30,17 @@ class LauchScreenVC: UIViewController {
                 print("Navigate here")
                 if Connectivity.isConnectedToInternet{
                     print("Connected")
-                    let isLoggedin = UserDefaults.standard.string(forKey: "isLoggedin") ?? "0"
-                    if(isLoggedin == "1") {
-                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+                    let isLoggedin = UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
+                    if(isLoggedin == true) {
+                        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
                         self.navigationController?.pushViewController(vc, animated: true)
                     } else {
-                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+                        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
                         self.navigationController?.pushViewController(vc, animated: true)
                     }
                 } else{
                     print("Not Connected")
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "ConnectionCheckVC") as! ConnectionCheckVC
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConnectionCheckVC") as! ConnectionCheckVC
                     self.navigationController?.pushViewController(vc, animated: false)
                 }
             } else {

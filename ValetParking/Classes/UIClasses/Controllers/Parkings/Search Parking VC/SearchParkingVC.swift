@@ -59,12 +59,12 @@ class SearchParkingVC: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
+        fpc.dismiss(animated: true, completion: nil)
     }
     private func showBottomSheet(model:NearbyPlaceModel){
         let appearance = SurfaceAppearance()
         appearance.cornerRadius = 30
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ParkingPlaceVC") as! ParkingPlaceVC
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ParkingPlaceVC") as! ParkingPlaceVC
         fpc.delegate = self
         fpc.contentViewController = vc
         vc.parkingPlaceDelegate = self
@@ -235,7 +235,7 @@ extension SearchParkingVC : UITextFieldDelegate{
 // MARK:- ParkingPlaceVCDelegate extension
 extension SearchParkingVC: ParkingPlaceVCDelegate {
     func sliderReachedToEnd(model: NearbyPlaceModel?) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "MyCarsVC") as! MyCarsVC
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyCarsVC") as! MyCarsVC
         vc.nearbyModel = model
         vc.myCarsDelegate = self
         navigationController?.pushViewController(vc, animated: true)

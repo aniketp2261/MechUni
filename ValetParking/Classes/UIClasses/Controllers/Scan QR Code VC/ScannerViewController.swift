@@ -45,6 +45,7 @@ class ScannerViewController: UIViewController {
     @IBOutlet var messageLabel: UILabel!
     @IBOutlet var topBar: UIView!
     @IBOutlet weak var ScanView: UIView!
+    @IBOutlet weak var ReScanImg: UIImageView!
 
     var QRArray: [QrArrayData] = []
     override func viewDidLoad() {
@@ -71,7 +72,6 @@ class ScannerViewController: UIViewController {
             
             // Set delegate and use the default dispatch queue to execute the call back
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-//            captureMetadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
             captureMetadataOutput.metadataObjectTypes = supportedCodeTypes
             
             // Initialize the video preview layer and add it as a sublayer to the viewPreview view's layer
@@ -102,12 +102,16 @@ class ScannerViewController: UIViewController {
             print(error)
             return
         }
+        ReScanImg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(reScanAction)))
     }
     override var preferredStatusBarStyle: UIStatusBarStyle{
         .lightContent
     }
     @IBAction func backBtnAction() {
         navigationController?.popViewController(animated: false)
+    }
+    @objc func reScanAction(){
+        captureSession.startRunning()
     }
 }
 
@@ -130,20 +134,9 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             
             if metadataObj.stringValue != nil {
                 captureSession.stopRunning()
-
-//                {
-//                           ticket_id:"TD-",
-//                           car_pick_up_status:true || payment_done_status:true
-//                }
                 // api call
                 messageLabel.text = metadataObj.stringValue
                 let json = JSON(metadataObj.stringValue ?? "")
-//                let Data = json[0] as! [String:Any]
-//                for data1 in Data{
-//                    var parkid = data1["_id"] as! Int
-//                    let model = QrArrayData(_id: parkid)
-//                    self.QRArray = model
-//                }
                 if let mData = metadataObj.stringValue?.data(using: .utf8){
                     let myDataJson = try? JSONDecoder().decode(QrArrayData.self, from: mData)
                     if String(myDataJson?._id ?? 0) == id{
@@ -155,54 +148,6 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                         self.view.makeToast("Wrong QR Code Detected..")
                     }
                 }
-//                AlertFunctions.showAlert(message: "MyDataDictionary888 \(json.dictionaryObject)")
-//                let alert = UIAlertController(title: "METADATA--\(metadataObj)", message: "StringValue--\(metadataObj.stringValue ?? "")", preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
-//                    nextAlert()
-//                }))
-//                self.present(alert, animated: true, completion: nil)
-//                func nextAlert(){
-//                    var pid = "\(json["_id"].intValue)\(json["_id"].int8)\(json["_id"].int16)\(json["_id"].int32)\(json["_id"].int64)"
-//
-//                    var pid2 = "\(json[0].intValue)"
-//                    var pid3 = "\(json[0].int)"
-//                    if pid != nil && pid != "" && pid2 != nil && pid2 != ""{
-//                        let alert = UIAlertController(title: "JSONDATA--\(json)", message: "ParkingID1--\(pid)\n ParkingID2--\(pid2)", preferredStyle: .alert)
-//                        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
-//                            let mAlert = UIAlertController(title: "Data", message: "Mdata000 --- \(json[0].stringValue)\n type00-- \(json[1].stringValue)\n mData0009 --- \(json[0].numberValue) \n m8899 --- \(json[0])", preferredStyle: .alert)
-//                            self.present(mAlert, animated: true, completion: nil)
-//                        }))
-//                        self.present(alert, animated: true, completion: nil)
-//                    } else {
-//                        let alert = UIAlertController(title: "JSONDATA--\(json)", message: "Error--\(json["_id"].error!)", preferredStyle: .alert)
-//                        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-//                        self.present(alert, animated: true, completion: nil)
-//                        print(json["_id"].error!)
-//                    }
-//                }
-//                if let QRData = metadataObj as? [String: Any]{
-//                    let alert = UIAlertController(title: nil, message: "\(QRData)", preferredStyle: .alert)
-//                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
-//                        nextAlert()
-//                    }))
-//                    self.present(alert, animated: true, completion: nil)
-//
-//                    func nextAlert(){
-//                        let pid = String(QRData["_id"] as? Int ?? 0)
-//                        let alert = UIAlertController(title: nil, message:  pid, preferredStyle: .alert)
-//                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
-//                        }))
-//                        self.present(alert, animated: true, completion: nil)
-//                        if pid == id{
-//                            updateCarPickupStatusToApi(ticketID: ticketId ?? "")
-//                            self.navigationController?.popViewController(animated: false)
-//                        }
-//                        else{
-//                            self.view.makeToast("Wrong Qr code Detected...")
-//                        }
-//                    }
-//
-//                }
             }
         }
     }

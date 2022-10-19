@@ -207,7 +207,7 @@ func regOTP()
                                     let message = JSON["message"] as? String
                                     self.view.makeToast(message);
                                 } else{
-                                    UserDefaults.standard.setValue("1", forKey: "isLoggedin")
+                                    UserDefaults.standard.setValue(true, forKey: "isLoggedin")
                                     self.view.makeToast("You have been registered successfully\(message)")
                                     let contentArr = JSON["result"] as? NSArray
                                     let dict = contentArr?.firstObject as? NSDictionary
@@ -223,7 +223,8 @@ func regOTP()
                                     UserDefaults.standard.setValue(dict?["image"] as? String ?? "", forKey: "userImage")
                                     UserDefaults.standard.setValue(dict?["_id"] as Any, forKey: "userID")
                                     UserDefaults.standard.setValue(dict?["password"] as Any, forKey: "userPassword")
-                                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+                                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+                                    vc.isLoggedin = true
                                     self.navigationController?.pushViewController(vc, animated: true)
                                 }
                             } else {

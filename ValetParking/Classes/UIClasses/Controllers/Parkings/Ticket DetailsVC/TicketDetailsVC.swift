@@ -79,7 +79,7 @@ class TicketDetailsVC: UIViewController {
         parkingBackDelegate?.ParkingNavigationBack()
     }
     @objc func helpBtnPressed(){
-        let Vc = storyboard?.instantiateViewController(withIdentifier: "ComplaintVC") as! ComplaintVC
+        let Vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ComplaintVC") as! ComplaintVC
         Vc.TicketID = self.TicketIdLbl.text
         present(Vc, animated: true,completion: nil)
 //      self.navigationController?.pushViewController(Vc, animated: false)
@@ -346,7 +346,7 @@ extension TicketDetailsVC : UITableViewDelegate,UITableViewDataSource{
     @objc func ticketDownloadAction(_ sender:UIButton!){
         if sender.tag == 0 {
             // make payment action
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "PaymentSummaryVC") as! PaymentSummaryVC
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PaymentSummaryVC") as! PaymentSummaryVC
             vc.ticketModel = self.ticketModel
             self.navigationController?.pushViewController(vc, animated: true)
         } else if sender.tag == 1 {
@@ -354,7 +354,7 @@ extension TicketDetailsVC : UITableViewDelegate,UITableViewDataSource{
             generatePDF()
         } else {
             // scan qr code action
-            let vc = storyboard?.instantiateViewController(withIdentifier: "ScannerViewController") as! ScannerViewController
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ScannerViewController") as! ScannerViewController
             vc.ticketId = self.TicketIdLbl.text
             vc.id = self.ticketModel?.ID
             navigationController?.pushViewController(vc, animated: false)

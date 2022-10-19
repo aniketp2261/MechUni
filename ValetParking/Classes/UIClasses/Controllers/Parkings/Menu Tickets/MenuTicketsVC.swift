@@ -133,7 +133,7 @@ extension MenuTicketsVC : UITableViewDelegate, UITableViewDataSource{
         let ticket = ticketArray[indexPath.row].ticketID
         UserDefaults.standard.setValue(ticket, forKey: "TicketId")
         print("TicketId---- \(ticket)")
-        let VC = storyboard?.instantiateViewController(withIdentifier: "TicketDetailsVC") as! TicketDetailsVC
+        let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TicketDetailsVC") as! TicketDetailsVC
         self.navigationController?.pushViewController(VC, animated: false)
     }
 }

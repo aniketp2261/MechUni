@@ -472,8 +472,8 @@ extension MechbrainServiceDetailsVC {
                                     self.ViewCartView.isHidden = true
                                     self.ViewCartViewHeight.constant = 50
                                 } else{
-                                    let isLoggedin = UserDefaults.standard.string(forKey: "isLoggedin") ?? "0"
-                                    if(isLoggedin == "1")
+                                    let isLoggedin = UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
+                                    if(isLoggedin == true)
                                     {
                                         self.ViewCartView.isHidden = false
                                         self.ViewCartViewHeight.constant = 110

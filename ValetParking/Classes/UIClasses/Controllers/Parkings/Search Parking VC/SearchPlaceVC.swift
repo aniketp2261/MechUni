@@ -44,7 +44,7 @@ class SearchPlaceVC: UIViewController, GMSMapViewDelegate, UIAlertViewDelegate {
     var serviceProviderArray: [NearbyServiceProviderModel] = []
     var searchDelegate: SearchPlaceDelegate? = nil
     let fpc = FloatingPanelController()
-    var isLoggedin = UserDefaults.standard.string(forKey: "isLoggedin")
+    var isLoggedin = UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
     var CurrentDay = String()
     var custCareNo = ""
     
@@ -85,6 +85,10 @@ class SearchPlaceVC: UIViewController, GMSMapViewDelegate, UIAlertViewDelegate {
         let dayOfTheWeekString = dateFormatter.string(from: date)
         CurrentDay = dayOfTheWeekString.lowercased()
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        fpc.dismiss(animated: true, completion: nil)
+    }
     func SkipLoginPopUp(){
         let alert = UIAlertView(title: "Login is required to access this feature", message: "", delegate: self, cancelButtonTitle: "CANCEL",  otherButtonTitles: "GO TO LOGIN")
         alert.tag = 50
@@ -118,7 +122,7 @@ class SearchPlaceVC: UIViewController, GMSMapViewDelegate, UIAlertViewDelegate {
     private func showBottomSheet(model:NearbyPlaceModel){
         let appearance = SurfaceAppearance()
         appearance.cornerRadius = 30
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ParkingPlaceVC") as! ParkingPlaceVC
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ParkingPlaceVC") as! ParkingPlaceVC
         fpc.delegate = self
         fpc.contentViewController = vc
         vc.parkingPlaceDelegate = self
@@ -242,8 +246,8 @@ class SearchPlaceVC: UIViewController, GMSMapViewDelegate, UIAlertViewDelegate {
         }
     }
     @IBAction func scannerButtonAction(){
-        if(self.isLoggedin == "1") {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "ParkingScannerVC") as! ParkingScannerVC
+        if(self.isLoggedin == true) {
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ParkingScannerVC") as! ParkingScannerVC
             vc.SearchPlaceVc = true
             self.navigationController?.pushViewController(vc, animated: false)
         } else{
@@ -407,8 +411,8 @@ class SearchPlaceVC: UIViewController, GMSMapViewDelegate, UIAlertViewDelegate {
                                     if count == "0"{
                                         AlertFunctions.showAlert(message: "", title: "Cart is Empty !", image: nil)
                                     } else{
-                                        let isLoggedin = UserDefaults.standard.string(forKey: "isLoggedin") ?? "0"
-                                        if(isLoggedin == "1")
+                                        let isLoggedin = UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
+                                        if(isLoggedin == true)
                                         {
                                             let vc = UIStoryboard(name: "Services", bundle: nil).instantiateViewController(withIdentifier: "CartDetailsVC") as! CartDetailsVC
                                             self.navigationController?.pushViewController(vc, animated: true)
@@ -488,7 +492,7 @@ class SearchPlaceVC: UIViewController, GMSMapViewDelegate, UIAlertViewDelegate {
     }
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         print("didTapMarker")
-        if(self.isLoggedin == "1")
+        if(self.isLoggedin == true)
         {
             for nearby in self.nearbyPlacesArray{
                 if nearby.parkingName == marker.title{
@@ -594,7 +598,7 @@ extension SearchPlaceVC: UICollectionViewDelegate,UICollectionViewDataSource,UIC
     }
    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if(self.isLoggedin == "1")
+        if(self.isLoggedin == true)
         {
             if collectionView == ParkingCollectionView{
                 UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
@@ -634,7 +638,7 @@ extension SearchPlaceVC: GMSAutocompleteViewControllerDelegate {
 // MARK: ParkingPlaceVCDelegate extension
 extension SearchPlaceVC: ParkingPlaceVCDelegate {
     func sliderReachedToEnd(model: NearbyPlaceModel?) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "MyCarsVC") as! MyCarsVC
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyCarsVC") as! MyCarsVC
         vc.nearbyModel = model
         vc.myCarsDelegate = self
         navigationController?.pushViewController(vc, animated: true)

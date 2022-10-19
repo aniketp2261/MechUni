@@ -26,7 +26,7 @@ class MenuAlertVC: UIViewController, UIAlertViewDelegate {
     
     var delegate: DefaultDelegate? = nil
     var logout = false
-    var isLoggedin =  UserDefaults.standard.string(forKey: "isLoggedin") ?? "0"
+    var isLoggedin =  UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
     
     let menuDataSource1 = [
         MenuData(title: "My Profile", img: #imageLiteral(resourceName: "ic_red_home")),
@@ -71,7 +71,7 @@ class MenuAlertVC: UIViewController, UIAlertViewDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(RefreshAction), name: NSNotification.Name(rawValue: "RefreshUI"), object: nil)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MenuScreenAppear"), object: nil)
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
             print("Image --- \(UserDefaults.standard.string(forKey: "userImage") ?? "")")
             DispatchQueue.main.async {
@@ -118,7 +118,7 @@ class MenuAlertVC: UIViewController, UIAlertViewDelegate {
         if alertView.tag == 100 {
             if buttonIndex == 1 {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LogoutEvent"), object: nil)
-                UserDefaults.standard.setValue("0", forKey: "isLoggedin")
+                UserDefaults.standard.setValue(false, forKey: "isLoggedin")
                 UserDefaults.standard.setValue("0", forKey: "userID")
                 UserDefaults.standard.removeObject(forKey: "dob")
                 UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: NSArray()),    forKey: "userDetails")
@@ -132,6 +132,7 @@ class MenuAlertVC: UIViewController, UIAlertViewDelegate {
         }else if alertView.tag == 101 {
             if buttonIndex == 0 {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LogoutEvent"), object: nil)
+                UserDefaults.standard.setValue(false, forKey: "isLoggedin")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let myVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
                 if let aVC = myVC {
@@ -143,6 +144,7 @@ class MenuAlertVC: UIViewController, UIAlertViewDelegate {
             print("EditProfileAlertButtonIndex---\(buttonIndex)")
             if buttonIndex == 1{
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LogoutEvent"), object: nil)
+                UserDefaults.standard.setValue(false, forKey: "isLoggedin")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let myVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
                 if let aVC = myVC {
@@ -174,7 +176,7 @@ extension MenuAlertVC: UITableViewDelegate,UITableViewDataSource{
         } else{
             cell?.lineView.isHidden = false
         }
-        if(isLoggedin == "1")
+        if(isLoggedin == true)
         {
             cell?.menuTitleLbl.text = menuDataSource1[indexPath.row].title
             cell?.menuImage.image = menuDataSource1[indexPath.row].img
@@ -187,7 +189,7 @@ extension MenuAlertVC: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("didSelectRowAt0000 ----- ")
         if indexPath.row == 0{
-            if(isLoggedin == "1")
+            if(isLoggedin == true)
             {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let myVC = storyboard.instantiateViewController(withIdentifier: "EditProfileVC") as! EditProfileVC
@@ -199,7 +201,7 @@ extension MenuAlertVC: UITableViewDelegate,UITableViewDataSource{
             }
         } else if indexPath.row == 1{
             print("Tickets----")
-            if(isLoggedin == "1")
+            if(isLoggedin == true)
             {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let myVC = storyboard.instantiateViewController(withIdentifier: "MenuTicketsVC") as! MenuTicketsVC
@@ -210,7 +212,7 @@ extension MenuAlertVC: UITableViewDelegate,UITableViewDataSource{
                 alert.show()
             }
         } else if indexPath.row == 2{
-            if(isLoggedin == "1")
+            if(isLoggedin == true)
             {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let myVC = storyboard.instantiateViewController(withIdentifier: "MyCarsVC") as! MyCarsVC
@@ -221,7 +223,7 @@ extension MenuAlertVC: UITableViewDelegate,UITableViewDataSource{
                 alert.show()
             }
         } else if indexPath.row == 3{
-            if(isLoggedin == "1")
+            if(isLoggedin == true)
             {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let myVC = storyboard.instantiateViewController(withIdentifier: "MyOrdersVC") as! MyOrdersVC
@@ -232,7 +234,7 @@ extension MenuAlertVC: UITableViewDelegate,UITableViewDataSource{
                 alert.show()
             }
         } else if indexPath.row == 4{
-            if(isLoggedin == "1")
+            if(isLoggedin == true)
             {
                 let storyboard = UIStoryboard(name: "Mechbrain", bundle: nil)
                 let myVC = storyboard.instantiateViewController(withIdentifier: "MechbrainMyOrdersVC") as! MechbrainMyOrdersVC
@@ -243,7 +245,7 @@ extension MenuAlertVC: UITableViewDelegate,UITableViewDataSource{
                 alert.show()
             }
         } else if indexPath.row == 5{
-            if(isLoggedin == "1")
+            if(isLoggedin == true)
             {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let myVC = storyboard.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
@@ -254,7 +256,7 @@ extension MenuAlertVC: UITableViewDelegate,UITableViewDataSource{
                 alert.show()
             }
         } else if indexPath.row == 6{
-            if(isLoggedin == "1")
+            if(isLoggedin == true)
             {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let myVC = storyboard.instantiateViewController(withIdentifier: "ChangePasswordVC") as! ChangePasswordVC
@@ -265,7 +267,7 @@ extension MenuAlertVC: UITableViewDelegate,UITableViewDataSource{
                 alert.show()
             }
         } else if indexPath.row == 7{
-            if(isLoggedin == "1")
+            if(isLoggedin == true)
             {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let myVC = storyboard.instantiateViewController(withIdentifier: "ContactUsVC") as! ContactUsVC
@@ -280,7 +282,7 @@ extension MenuAlertVC: UITableViewDelegate,UITableViewDataSource{
             let myVC = storyboard.instantiateViewController(withIdentifier: "AboutUsVC") as! AboutUsVC
             presentingViewController?.navigationController?.pushViewController(myVC, animated: false)
         } else if indexPath.row == 9{
-            if(isLoggedin == "1")
+            if(isLoggedin == true)
             {
                 let appleURL = "https://www.mechuni.com/PRIVACY%20POLICY%20MECHUNI.pdf"
                 let sfVc = SFSafariViewController(url: URL(string: appleURL)!)
@@ -292,7 +294,7 @@ extension MenuAlertVC: UITableViewDelegate,UITableViewDataSource{
                 alert.show()
             }
         } else if indexPath.row == 10{
-            if(isLoggedin == "1")
+            if(isLoggedin == true)
             {
                 let alert = UIAlertView(title: "Are you sure you want to delete account?", message: "", delegate: self, cancelButtonTitle: "CANCEL",  otherButtonTitles: "CONFIRM")
                 alert.tag = 51
@@ -304,7 +306,7 @@ extension MenuAlertVC: UITableViewDelegate,UITableViewDataSource{
             }
         } else if indexPath.row == 11{
             print("Logout----")
-            if(isLoggedin == "1")
+            if(isLoggedin == true)
             {
                 let alert = UIAlertView(title: "Are you sure! you want to Logout?", message: "", delegate: self, cancelButtonTitle: "NO", otherButtonTitles: "YES")
                 alert.tag = 100
@@ -315,6 +317,7 @@ extension MenuAlertVC: UITableViewDelegate,UITableViewDataSource{
 //              UserDefaults.standard.synchronize()
 //              print(Array(UserDefaults.standard.dictionaryRepresentation().keys).count)
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LogoutEvent"), object: nil)
+                UserDefaults.standard.setValue(false, forKey: "isLoggedin")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let myVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
                 if let aVC = myVC {
@@ -349,7 +352,7 @@ extension MenuAlertVC{
                         let message = apiDict["message"] as? String ?? ""
                         if status == "success" {
                             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LogoutEvent"), object: nil)
-                            UserDefaults.standard.setValue("0", forKey: "isLoggedin")
+                            UserDefaults.standard.setValue(false, forKey: "isLoggedin")
                             UserDefaults.standard.setValue("0", forKey: "userID")
                             UserDefaults.standard.removeObject(forKey: "dob")
                             UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: NSArray()),    forKey: "userDetails")

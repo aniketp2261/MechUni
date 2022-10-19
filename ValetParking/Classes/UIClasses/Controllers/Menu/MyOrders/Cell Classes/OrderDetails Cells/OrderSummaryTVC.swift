@@ -30,8 +30,7 @@ class OrderSummaryTVC: UITableViewCell {
         ServiceTBV.delegate = self
         ServiceTBV.dataSource = self
         ServiceTBV.register(UINib(nibName: "ServiceListInOrderTVC", bundle: nil), forCellReuseIdentifier: "ServiceListInOrderTVC")
-        ServiceTBV.rowHeight = UITableView.automaticDimension
-        ServiceTBV.estimatedRowHeight = 0
+        ServiceTBV.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,9 +40,14 @@ class OrderSummaryTVC: UITableViewCell {
     func getData(OrderServices: [OrderDetailsServiceModel]) {
         self.OrderServices = OrderServices
         self.ServiceTBV.reloadData()
-        self.ServiceTBV.layoutIfNeeded()
-        self.ServiceTBVHeight.constant = self.ServiceTBV.contentSize.height
-        self.ServiceTBV.layoutIfNeeded()
+    }
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?){
+        if(keyPath == "contentSize"){
+            if let newvalue = change?[.newKey]{
+                let newsize = newvalue as! CGSize
+                self.ServiceTBVHeight.constant = newsize.height
+            }
+        }
     }
 }
 extension OrderSummaryTVC: UITableViewDelegate, UITableViewDataSource{
@@ -52,11 +56,12 @@ extension OrderSummaryTVC: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceListInOrderTVC") as! ServiceListInOrderTVC
+        cell.sizeToFit()
         cell.ServiceName.text = OrderServices[indexPath.row].serviceName
         cell.ServiceCost.text = "Rs.\(OrderServices[indexPath.row].serviceCost).0"
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return 35
     }
 }

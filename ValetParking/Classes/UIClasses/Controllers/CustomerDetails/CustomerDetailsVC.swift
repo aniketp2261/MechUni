@@ -146,7 +146,7 @@ class CustomerDetailsVC: UIViewController, UIImagePickerControllerDelegate, UINa
                                 }else{
                                     SKActivityIndicator.dismiss()
                                     self.view.makeToast("Information saved successfully");
-                                    UserDefaults.standard.setValue("1", forKey: "isLoggedin")
+                                    UserDefaults.standard.setValue(true, forKey: "isLoggedin")
                                     let contentArr = JSON["result"] as? NSArray
                                     let dict = contentArr?.firstObject as! NSDictionary
                                     //

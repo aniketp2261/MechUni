@@ -493,7 +493,7 @@ class CarDetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
                                     SKActivityIndicator.dismiss()
 //                                    let message = JSON["message"] as? String
 //                                    self.view.makeToast(message);
-                                    //                                UserDefaults.standard.set("1", forKey: "isLoggedin")
+                                    //                                UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
                                     //                                let contentArr = JSON["result"] as? NSArray
                                     //
                                     //                                UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: contentArr), forKey: "carDetails")

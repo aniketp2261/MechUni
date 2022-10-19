@@ -32,7 +32,6 @@ class EditProfileVC: UIViewController{
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let isLoggedin =  UserDefaults.standard.string(forKey: "isLoggedin") ?? ""
         let userImage = UserDefaults.standard.string(forKey: "userImage") ?? ""
         let userName = UserDefaults.standard.string(forKey: "userName") ?? ""
         let dob = UserDefaults.standard.string(forKey: "dob") ?? ""
@@ -50,7 +49,7 @@ class EditProfileVC: UIViewController{
     }
     @IBAction func editBtnClicked(){
         if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
             self.navigationController?.pushViewController(vc, animated: false)
         } else {
             // Fallback on earlier versions

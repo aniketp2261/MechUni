@@ -66,8 +66,8 @@ class MyCarsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     }
     func ViewDisplay(){
         UserDefaults.standard.setValue("myCars", forKey: "SelectedTab")
-        let isLoggedin = UserDefaults.standard.string(forKey: "isLoggedin") ?? "0"
-        if(isLoggedin == "1")
+        let isLoggedin = UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
+        if(isLoggedin == true)
         {
           listCarApi()
             self.mCarTV.isHidden = false
@@ -136,7 +136,7 @@ class MyCarsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         let mCell = mCarTV.cellForRow(at: IndexPath(row: sender.view?.tag ?? 0, section: 0)) as? CarCell
         let maindict = self.listArray[sender.view?.tag ?? 0] as NSDictionary
         if ServiceFlow == false{
-            let vc = storyboard?.instantiateViewController(withIdentifier: "ConfirmAndParkVC") as! ConfirmAndParkVC
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConfirmAndParkVC") as! ConfirmAndParkVC
             vc.nearbyPostModel = nearbyModel
             vc.confirmAndParkDelegate = self
             vc.carId = String(maindict["_id"] as! Int)
@@ -153,7 +153,7 @@ class MyCarsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     @objc func editAction (_ sender: UITapGestureRecognizer){
         let maindict = self.listArray[sender.view?.tag ?? 0] as! NSDictionary
         if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "AddVehicleVC") as! AddVehicleVC
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddVehicleVC") as! AddVehicleVC
             vc.vehiclePlateNo = maindict["plate_no"] as! String
             vc.fileStr = maindict["car_image"] as? String ?? ""
             vc.selectedVehicleType = Int(maindict["vehicle_type"] as? String ?? "") ?? -1
@@ -206,8 +206,8 @@ class MyCarsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
     
     @IBAction func mAddCar(_ sender: Any) {
-        let isLoggedin =  UserDefaults.standard.string(forKey: "isLoggedin") ?? "0"
-        if(isLoggedin == "1")
+        let isLoggedin =  UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
+        if(isLoggedin == true)
         {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "CarDetailsVC") as! CarDetailsVC
@@ -224,7 +224,7 @@ class MyCarsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     @IBAction func addVehicleAction(){
         print("addVehicleAction0000 ----- ")
         if #available(iOS 13.0, *) {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "AddVehicleVC") as! AddVehicleVC
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddVehicleVC") as! AddVehicleVC
             navigationController?.pushViewController(vc, animated: true)
         } else {
             // Fallback on earlier versions

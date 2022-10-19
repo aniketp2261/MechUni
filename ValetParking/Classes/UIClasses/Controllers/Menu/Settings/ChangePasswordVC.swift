@@ -154,7 +154,7 @@ class ChangePasswordVC: UIViewController {
                                     self.mCurrentPswdTF.text = ""
                                     self.mNewPswdTF.text = ""
                                     self.mRePswdTF.text = ""
-                                    UserDefaults.standard.setValue("0", forKey: "isLoggedin")
+                                    UserDefaults.standard.setValue(false, forKey: "isLoggedin")
                                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                                     let myVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
                                     if let aVC = myVC {

@@ -252,8 +252,8 @@ class HelpLineVC: UIViewController, UITextFieldDelegate, UIAlertViewDelegate, UI
       
     func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if alertView.tag == 100 {
-            let isLoggedin = UserDefaults.standard.string(forKey: "isLoggedin") ?? "0"
-            if(isLoggedin == "1")
+            let isLoggedin = UserDefaults.standard.value(forKey: "isLoggedin") as? Bool ?? false
+            if(isLoggedin == true)
             {
                 self.navigationController?.popViewController(animated: false)
             } else {

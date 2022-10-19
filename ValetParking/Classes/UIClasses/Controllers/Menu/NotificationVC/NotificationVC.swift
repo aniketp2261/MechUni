@@ -71,7 +71,7 @@ class NotificationVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.updateNotificationStatus(parameters)
             if maindict.ticketId != "" && maindict.ticketId != nil {
 
-                let VC = storyboard?.instantiateViewController(withIdentifier: "TicketDetailsVC") as! TicketDetailsVC
+                let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TicketDetailsVC") as! TicketDetailsVC
                 UserDefaults.standard.setValue(maindict.ticketId, forKey: "TicketId")
                 self.navigationController?.pushViewController(VC, animated: true)
 //            self.getTicketStatus(parameters)

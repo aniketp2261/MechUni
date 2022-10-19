@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,37 +26,42 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="36"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Euf-Qu-C0T">
-                        <rect key="frame" x="5" y="0.0" width="310" height="36"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Light" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JS4-hZ-Ggv">
-                                <rect key="frame" x="0.0" y="0.0" width="155" height="36"/>
-                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rs." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBX-DB-czQ">
-                                <rect key="frame" x="155" y="0.0" width="155" height="36"/>
-                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Charges" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyN-Bz-Eea">
+                        <rect key="frame" x="5" y="5" width="219" height="26"/>
+                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
+                        <color key="textColor" name="PrimaryColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rs.600.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQB-Od-rfc">
+                        <rect key="frame" x="229" y="5" width="86" height="22.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="86" id="Ltb-P3-ysv"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
+                        <color key="textColor" name="PrimaryColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Euf-Qu-C0T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="HcP-Ih-Wva"/>
-                    <constraint firstAttribute="trailing" secondItem="Euf-Qu-C0T" secondAttribute="trailing" constant="5" id="M4u-oa-rJE"/>
-                    <constraint firstAttribute="bottom" secondItem="Euf-Qu-C0T" secondAttribute="bottom" id="lf7-fN-FxU"/>
-                    <constraint firstItem="Euf-Qu-C0T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="yFG-Hf-fKD"/>
+                    <constraint firstItem="hQB-Od-rfc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="5RT-hF-j40"/>
+                    <constraint firstItem="hQB-Od-rfc" firstAttribute="leading" secondItem="OyN-Bz-Eea" secondAttribute="trailing" constant="5" id="9Nf-IR-42c"/>
+                    <constraint firstItem="OyN-Bz-Eea" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Brd-9S-wve"/>
+                    <constraint firstAttribute="bottom" secondItem="OyN-Bz-Eea" secondAttribute="bottom" constant="5" id="dxk-M4-M0b"/>
+                    <constraint firstItem="OyN-Bz-Eea" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="qd4-7X-O2Q"/>
+                    <constraint firstAttribute="trailing" secondItem="hQB-Od-rfc" secondAttribute="trailing" constant="5" id="rUX-gB-DBd"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="ServiceCost" destination="KBX-DB-czQ" id="9LU-HA-uPg"/>
-                <outlet property="ServiceName" destination="JS4-hZ-Ggv" id="snK-1d-OwJ"/>
+                <outlet property="ServiceCost" destination="hQB-Od-rfc" id="pe4-j2-Ar6"/>
+                <outlet property="ServiceName" destination="OyN-Bz-Eea" id="7Xa-1O-rih"/>
             </connections>
             <point key="canvasLocation" x="100.00000000000001" y="44.866071428571423"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="PrimaryColor">
+            <color red="0.31400001049041748" green="0.31400001049041748" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
