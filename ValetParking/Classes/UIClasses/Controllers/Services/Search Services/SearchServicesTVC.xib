@@ -210,7 +210,7 @@
         <image name="CarLocation" width="107" height="89"/>
         <image name="clockRed" width="32" height="32"/>
         <image name="icBikeGray" width="31" height="22"/>
-        <image name="icCarGray" width="27" height="22"/>
+        <image name="icCarGray" width="75" height="75"/>
         <image name="ic_loc_marker_red" width="32" height="32"/>
         <namedColor name="PrimaryColor">
             <color red="0.31400001049041748" green="0.31400001049041748" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

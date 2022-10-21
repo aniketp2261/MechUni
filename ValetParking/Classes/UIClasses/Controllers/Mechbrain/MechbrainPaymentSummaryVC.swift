@@ -52,9 +52,9 @@ class MechbrainPaymentSummaryVC: UIViewController {
         MakePaymentBtn.layer.borderWidth = 1
         MakePaymentBtn.layer.borderColor = UIColor.red.cgColor
         MechServiceView.layer.cornerRadius = 15
-        MechServiceView.layer.shadowOffset = CGSize(width: 0, height: 4)
-        MechServiceView.layer.shadowRadius = 4
-        MechServiceView.layer.shadowOpacity = 0.4
+        MechServiceView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        MechServiceView.layer.shadowRadius = 3
+        MechServiceView.layer.shadowOpacity = 0.3
         MechServiceView.layer.shadowColor = UIColor.black.cgColor
         ApplyCouponBtn.layer.borderWidth = 1
         ApplyCouponBtn.layer.cornerRadius = 10

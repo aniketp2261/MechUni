@@ -122,12 +122,11 @@ class MenuAlertVC: UIViewController, UIAlertViewDelegate {
                 UserDefaults.standard.setValue("0", forKey: "userID")
                 UserDefaults.standard.removeObject(forKey: "dob")
                 UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: NSArray()),    forKey: "userDetails")
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let myVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
-                    if let aVC = myVC {
-                        presentingViewController?.navigationController?.pushViewController(aVC, animated: false)
-                    }
-                Constants.appDelegate?.moveToLogin()
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let myVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
+                if let aVC = myVC {
+                    presentingViewController?.navigationController?.pushViewController(aVC, animated: false)
+                }
             }
         }else if alertView.tag == 101 {
             if buttonIndex == 0 {
@@ -312,10 +311,6 @@ extension MenuAlertVC: UITableViewDelegate,UITableViewDataSource{
                 alert.tag = 100
                 alert.show()
             } else {
-//              let domain = Bundle.main.bundleIdentifier!
-//              UserDefaults.standard.removePersistentDomain(forName: domain)
-//              UserDefaults.standard.synchronize()
-//              print(Array(UserDefaults.standard.dictionaryRepresentation().keys).count)
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LogoutEvent"), object: nil)
                 UserDefaults.standard.setValue(false, forKey: "isLoggedin")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -323,7 +318,6 @@ extension MenuAlertVC: UITableViewDelegate,UITableViewDataSource{
                 if let aVC = myVC {
                 Constants.kNavigationController?.pushViewController(aVC, animated: true)
                 }
-                Constants.appDelegate?.moveToLogin()
             }
         }
     }

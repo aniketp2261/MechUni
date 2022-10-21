@@ -43,7 +43,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mechnic" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwM-6g-fhs">
-                                <rect key="frame" x="70" y="5" width="293" height="30.5"/>
+                                <rect key="frame" x="70" y="10" width="293" height="17"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
                                 <color key="textColor" name="PrimaryColor"/>
                                 <nil key="highlightedColor"/>
@@ -56,13 +56,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Kolhapur." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qg-bP-VGI">
-                                <rect key="frame" x="90" y="40.5" width="303" height="16.5"/>
+                                <rect key="frame" x="90" y="32" width="303" height="20"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                 <color key="textColor" name="PrimaryColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_loc_marker_red" translatesAutoresizingMaskIntoConstraints="NO" id="o0d-yW-V72">
-                                <rect key="frame" x="70" y="41.5" width="15" height="15"/>
+                                <rect key="frame" x="70" y="34.5" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="dAT-jk-pS3"/>
                                     <constraint firstAttribute="width" constant="15" id="fxf-Od-pgI"/>
@@ -214,12 +214,13 @@
                             <constraint firstItem="2qg-bP-VGI" firstAttribute="top" secondItem="rwM-6g-fhs" secondAttribute="bottom" constant="5" id="94x-Ou-CYH"/>
                             <constraint firstItem="Lpg-Zx-88L" firstAttribute="top" secondItem="n6A-dp-qBw" secondAttribute="top" constant="5" id="D2u-IG-Jkb"/>
                             <constraint firstItem="O7c-eK-3fy" firstAttribute="leading" secondItem="n6A-dp-qBw" secondAttribute="leading" constant="10" id="E8d-wf-ikl"/>
-                            <constraint firstItem="hJd-QK-tJR" firstAttribute="top" secondItem="2qg-bP-VGI" secondAttribute="bottom" constant="5" id="HT8-dR-m2q"/>
+                            <constraint firstItem="hJd-QK-tJR" firstAttribute="top" secondItem="2qg-bP-VGI" secondAttribute="bottom" constant="10" id="HT8-dR-m2q"/>
                             <constraint firstItem="iNU-FX-t5j" firstAttribute="leading" secondItem="n6A-dp-qBw" secondAttribute="leading" constant="10" id="HuG-Mb-nD9"/>
                             <constraint firstItem="pc6-fk-Vk2" firstAttribute="top" secondItem="hJd-QK-tJR" secondAttribute="bottom" id="HvP-xW-d3f"/>
                             <constraint firstItem="pc6-fk-Vk2" firstAttribute="leading" secondItem="n6A-dp-qBw" secondAttribute="leading" constant="10" id="TXP-TM-Af3"/>
                             <constraint firstAttribute="trailing" secondItem="pc6-fk-Vk2" secondAttribute="trailing" constant="10" id="TdJ-uk-FEP"/>
                             <constraint firstAttribute="trailing" secondItem="2qg-bP-VGI" secondAttribute="trailing" constant="5" id="Trt-p1-ceZ"/>
+                            <constraint firstItem="rwM-6g-fhs" firstAttribute="top" secondItem="iNU-FX-t5j" secondAttribute="top" id="Ytl-Kg-Gkd"/>
                             <constraint firstAttribute="trailing" secondItem="Lpg-Zx-88L" secondAttribute="trailing" constant="5" id="a1T-cP-yB3"/>
                             <constraint firstItem="o0d-yW-V72" firstAttribute="leading" secondItem="iNU-FX-t5j" secondAttribute="trailing" constant="10" id="aKw-8c-gYo"/>
                             <constraint firstItem="2qg-bP-VGI" firstAttribute="leading" secondItem="o0d-yW-V72" secondAttribute="trailing" constant="5" id="cBc-Mj-8V6"/>
@@ -227,7 +228,6 @@
                             <constraint firstAttribute="bottom" secondItem="O7c-eK-3fy" secondAttribute="bottom" constant="10" id="igy-Ys-PDs"/>
                             <constraint firstItem="rwM-6g-fhs" firstAttribute="leading" secondItem="iNU-FX-t5j" secondAttribute="trailing" constant="10" id="jPM-Pc-3fg"/>
                             <constraint firstAttribute="trailing" secondItem="hJd-QK-tJR" secondAttribute="trailing" constant="10" id="jm4-2k-0NS"/>
-                            <constraint firstItem="rwM-6g-fhs" firstAttribute="top" secondItem="n6A-dp-qBw" secondAttribute="top" constant="5" id="kyX-gC-ZeF"/>
                             <constraint firstItem="2qg-bP-VGI" firstAttribute="centerY" secondItem="o0d-yW-V72" secondAttribute="centerY" id="l3T-08-gLC"/>
                             <constraint firstItem="iNU-FX-t5j" firstAttribute="top" secondItem="n6A-dp-qBw" secondAttribute="top" constant="10" id="sfW-jM-5zt"/>
                             <constraint firstAttribute="trailing" secondItem="O7c-eK-3fy" secondAttribute="trailing" constant="10" id="zdL-7G-Bmf"/>

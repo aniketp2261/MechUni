@@ -57,10 +57,12 @@ class ConfirmAndParkVC: UIViewController {
         parkingImgView.layer.cornerRadius = 8
         bottomSheetView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         bottomSheetView.layer.cornerRadius = 30
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(exitGesture))
-        view.addGestureRecognizer(panGesture)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(exitGesture))
-        crossBtnImg.addGestureRecognizer(tapGesture)
+        parkingImgView.layer.shadowColor = UIColor.black.cgColor
+        parkingImgView.layer.shadowRadius = 3
+        parkingImgView.layer.shadowOpacity = 0.3
+        parkingImgView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(exitGesture)))
+        crossBtnImg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(exitGesture)))
         
         let date = Date()
         let formatter = DateFormatter()

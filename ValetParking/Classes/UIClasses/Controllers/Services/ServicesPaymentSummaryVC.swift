@@ -21,7 +21,6 @@ class ServicesPaymentSummaryVC: UIViewController {
     @IBOutlet weak var TotalServicesCharges: UILabel!
     @IBOutlet weak var DiscountView: UIView!
     @IBOutlet weak var DiscountViewHeight: NSLayoutConstraint!
-//    @IBOutlet weak var ServicesChargesViewHeight : NSLayoutConstraint!
     @IBOutlet weak var Discount: UILabel!
     @IBOutlet weak var TotalAmount: UILabel!
     @IBOutlet weak var MakePaymentBtn: UIButton!
@@ -41,7 +40,6 @@ class ServicesPaymentSummaryVC: UIViewController {
         self.DiscountViewHeight.constant = 0
         self.DiscountView.isHidden = true
         self.OfferDiscountMsgLbl.isHidden = true
-//        self.ServicesChargesViewHeight.constant = 55
         self.MakePaymentBtn.layer.borderWidth = 1
         self.MakePaymentBtn.layer.borderColor = UIColor.red.cgColor
         self.MakePaymentBtn.layer.cornerRadius = self.MakePaymentBtn.bounds.height/2
@@ -51,9 +49,9 @@ class ServicesPaymentSummaryVC: UIViewController {
         self.ApplyCouponsBtn.layer.cornerRadius = 10
         self.ApplyCouponsBtn.addTarget(self, action: #selector(ApplyCouponsAction), for: .touchUpInside)
         shadowView.layer.cornerRadius = 15
-        shadowView.layer.shadowOffset = CGSize(width: 0, height: 4)
-        shadowView.layer.shadowRadius = 4
-        shadowView.layer.shadowOpacity = 0.4
+        shadowView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        shadowView.layer.shadowRadius = 3
+        shadowView.layer.shadowOpacity = 0.3
         shadowView.layer.shadowColor = UIColor.black.cgColor
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -146,7 +144,7 @@ class ServicesPaymentSummaryVC: UIViewController {
         if Connectivity.isConnectedToInternet
         {
             SKActivityIndicator.show("Loading...")
-            Alamofire.request(APIEndPoints.BaseURL + "manage_coupons/apply_service_coupon", method: .post,parameters: Params, encoding: JSONEncoding.default, headers: nil).responseJSON { apiResponse in
+            Alamofire.request(APIEndPoints.BaseURL+"manage_coupons/apply_service_coupon", method: .post,parameters: Params, encoding: JSONEncoding.default, headers: nil).responseJSON { apiResponse in
                 print("getCoupons -- \(apiResponse)")
                 SKActivityIndicator.dismiss()
                 switch apiResponse.result{
@@ -189,7 +187,7 @@ class ServicesPaymentSummaryVC: UIViewController {
         if Connectivity.isConnectedToInternet
         {
             SKActivityIndicator.show("Loading...")
-            Alamofire.request("\(APIEndPoints.BaseURL)manage_coupons/get_coupon_codes?coupon_for=service", method: .get, encoding: JSONEncoding.default, headers: nil).responseJSON { apiResponse in
+            Alamofire.request(APIEndPoints.BaseURL+"manage_coupons/get_coupon_codes?coupon_for=service", method: .get, encoding: JSONEncoding.default, headers: nil).responseJSON { apiResponse in
                 print("getCoupons -- \(apiResponse)")
                 switch apiResponse.result{
                 case .success(_):

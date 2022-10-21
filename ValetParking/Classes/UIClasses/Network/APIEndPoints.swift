@@ -10,8 +10,8 @@ import Foundation
 
 class APIEndPoints {
     
-//    static let BaseURL = "https://apis.mechuni.com/"
-    static let BaseURL = "https://apis.mechuni.com/dev_apis/"
+    static let BaseURL = "https://apis.mechuni.com/"
+//    static let BaseURL = "https://apis.mechuni.com/dev_apis/"
     static let RazorPayKeyLive = "rzp_live_r44cSIMuT21QjX"
     static let RazorPayKeyTest = "rzp_test_8kEIIvxlQ1S6Ju"
     static let IPURL = "http://13.233.94.24:300/"

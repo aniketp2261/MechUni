@@ -49,14 +49,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIj-4U-bdH">
-                                        <rect key="frame" x="80" y="10" width="276" height="16.5"/>
-                                        <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="14"/>
+                                        <rect key="frame" x="80" y="10" width="276" height="16"/>
+                                        <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="16"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBh-fe-4bZ">
-                                        <rect key="frame" x="80" y="31.5" width="276" height="14"/>
-                                        <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy-Regular" pointSize="12"/>
+                                        <rect key="frame" x="80" y="31" width="276" height="14"/>
+                                        <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy-Regular" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -81,13 +81,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0P-yd-0Lx">
-                                <rect key="frame" x="0.0" y="90" width="366" height="96"/>
+                                <rect key="frame" x="0.0" y="90" width="366" height="93"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XqJ-H8-KUa">
-                                        <rect key="frame" x="10" y="10" width="60" height="60"/>
+                                        <rect key="frame" x="10" y="10" width="55" height="55"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="Co6-Vz-tPf"/>
-                                            <constraint firstAttribute="height" constant="60" id="y2w-yH-gyI"/>
+                                            <constraint firstAttribute="width" constant="55" id="Co6-Vz-tPf"/>
+                                            <constraint firstAttribute="height" constant="55" id="y2w-yH-gyI"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -96,7 +96,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4O1-t5-C8Y">
-                                        <rect key="frame" x="316" y="10" width="45" height="16.5"/>
+                                        <rect key="frame" x="316" y="10" width="45" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="N9G-vf-tHz"/>
                                         </constraints>
@@ -105,46 +105,46 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="distance" translatesAutoresizingMaskIntoConstraints="NO" id="MaC-ap-Dg7">
-                                        <rect key="frame" x="296" y="11" width="15" height="15"/>
+                                        <rect key="frame" x="296" y="9.5" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="FsS-oc-Ow8"/>
                                             <constraint firstAttribute="width" constant="15" id="a3c-3z-vSi"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjH-Mj-fDZ">
-                                        <rect key="frame" x="80" y="10" width="211" height="16.5"/>
-                                        <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="14"/>
+                                        <rect key="frame" x="75" y="10" width="216" height="16"/>
+                                        <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="16"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clockRed" translatesAutoresizingMaskIntoConstraints="NO" id="ImW-Jx-YoM">
-                                        <rect key="frame" x="80" y="31.5" width="15" height="15"/>
+                                        <rect key="frame" x="75" y="31" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="DC1-Fx-6w5"/>
                                             <constraint firstAttribute="height" constant="15" id="ibB-4a-7jR"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FL-88-vDN">
-                                        <rect key="frame" x="100" y="31.5" width="206" height="14"/>
+                                        <rect key="frame" x="95" y="31" width="211" height="12"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="12"/>
                                         <color key="textColor" name="PrimaryColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CarLocation" translatesAutoresizingMaskIntoConstraints="NO" id="9cM-C9-zHl">
-                                        <rect key="frame" x="80" y="50.5" width="15" height="15"/>
+                                        <rect key="frame" x="75" y="48" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="55H-DT-EKU"/>
                                             <constraint firstAttribute="height" constant="15" id="P0X-fD-VfF"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZO0-0p-voU">
-                                        <rect key="frame" x="100" y="50.5" width="261" height="14"/>
+                                        <rect key="frame" x="95" y="48" width="266" height="12"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="12"/>
                                         <color key="textColor" name="PrimaryColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QP9-uQ-lRL">
-                                        <rect key="frame" x="311" y="31.5" width="45" height="20"/>
+                                        <rect key="frame" x="311" y="29" width="45" height="20"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCarGray" translatesAutoresizingMaskIntoConstraints="NO" id="zBK-UC-awh">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -163,14 +163,14 @@
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_loc_marker_red" translatesAutoresizingMaskIntoConstraints="NO" id="ggT-d8-hQ0">
-                                        <rect key="frame" x="10" y="75" width="15" height="15"/>
+                                        <rect key="frame" x="10" y="70" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="MzA-XF-syd"/>
                                             <constraint firstAttribute="width" constant="15" id="S6K-G0-dpW"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0E-jr-8D0">
-                                        <rect key="frame" x="30" y="75" width="331" height="11"/>
+                                        <rect key="frame" x="30" y="70" width="331" height="13"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="12"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -213,7 +213,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZXO-bt-UaN">
-                                <rect key="frame" x="0.0" y="196" width="366" height="99"/>
+                                <rect key="frame" x="0.0" y="193" width="366" height="102"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fw4-I3-fFP">
                                         <rect key="frame" x="10" y="10" width="60" height="60"/>
@@ -227,40 +227,40 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdw-wo-cmJ">
-                                        <rect key="frame" x="80" y="10" width="211" height="19"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdw-wo-cmJ">
+                                        <rect key="frame" x="80" y="10" width="211" height="16"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="16"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="0 min left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5t8-Dt-lyJ">
-                                        <rect key="frame" x="80" y="34" width="276" height="14"/>
+                                        <rect key="frame" x="80" y="31" width="276" height="12"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="12"/>
                                         <color key="textColor" name="PrimaryColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="752" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbX-Qm-uVf">
-                                        <rect key="frame" x="28" y="75" width="328" height="14"/>
+                                        <rect key="frame" x="28" y="80" width="328" height="12"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="12"/>
                                         <color key="textColor" name="PrimaryColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_loc_marker_red" translatesAutoresizingMaskIntoConstraints="NO" id="qCW-ix-sJG">
-                                        <rect key="frame" x="8" y="75" width="15" height="15"/>
+                                        <rect key="frame" x="8" y="80" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="JFk-eS-6WN"/>
                                             <constraint firstAttribute="width" constant="15" id="O5c-ne-b1T"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="distance" translatesAutoresizingMaskIntoConstraints="NO" id="O6B-8p-BjH">
-                                        <rect key="frame" x="296" y="12" width="15" height="15"/>
+                                        <rect key="frame" x="296" y="10.5" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="Mb3-3K-cuO"/>
                                             <constraint firstAttribute="height" constant="15" id="wKj-aH-Qqj"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hUG-2R-mHH">
-                                        <rect key="frame" x="80" y="53" width="130" height="20"/>
+                                        <rect key="frame" x="80" y="48" width="136.5" height="20"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCarGray" translatesAutoresizingMaskIntoConstraints="NO" id="YJy-ql-4SL">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -270,20 +270,20 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 60/hr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1Q-jJ-6K2">
-                                                <rect key="frame" x="30" y="0.0" width="31.5" height="20"/>
+                                                <rect key="frame" x="30" y="0.0" width="34.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="12"/>
                                                 <color key="textColor" name="PrimaryColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icBikeGray" translatesAutoresizingMaskIntoConstraints="NO" id="SHW-IY-lwA">
-                                                <rect key="frame" x="71.5" y="0.0" width="20" height="20"/>
+                                                <rect key="frame" x="74.5" y="0.0" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="7Eb-QC-bRP"/>
                                                     <constraint firstAttribute="width" constant="20" id="aFw-Ld-h17"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40/hr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNI-PY-BXX">
-                                                <rect key="frame" x="101.5" y="0.0" width="28.5" height="20"/>
+                                                <rect key="frame" x="104.5" y="0.0" width="32" height="20"/>
                                                 <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="12"/>
                                                 <color key="textColor" name="PrimaryColor"/>
                                                 <nil key="highlightedColor"/>
@@ -291,7 +291,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbp-db-wnm">
-                                        <rect key="frame" x="316" y="11.5" width="45" height="16.5"/>
+                                        <rect key="frame" x="316" y="11" width="45" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="EVn-2p-A37"/>
                                         </constraints>
@@ -310,7 +310,7 @@
                                     <constraint firstItem="sdw-wo-cmJ" firstAttribute="centerY" secondItem="O6B-8p-BjH" secondAttribute="centerY" id="IqZ-gy-Y4E"/>
                                     <constraint firstAttribute="bottom" secondItem="IbX-Qm-uVf" secondAttribute="bottom" constant="10" id="QOF-N2-VMB"/>
                                     <constraint firstItem="Fw4-I3-fFP" firstAttribute="leading" secondItem="ZXO-bt-UaN" secondAttribute="leading" constant="10" id="WBk-e9-CbC"/>
-                                    <constraint firstItem="IbX-Qm-uVf" firstAttribute="top" secondItem="Fw4-I3-fFP" secondAttribute="bottom" constant="5" id="YBd-up-vxv"/>
+                                    <constraint firstItem="IbX-Qm-uVf" firstAttribute="top" secondItem="Fw4-I3-fFP" secondAttribute="bottom" constant="10" id="YBd-up-vxv"/>
                                     <constraint firstItem="hUG-2R-mHH" firstAttribute="leading" secondItem="Fw4-I3-fFP" secondAttribute="trailing" constant="10" id="cGk-y3-2IG"/>
                                     <constraint firstItem="hUG-2R-mHH" firstAttribute="top" secondItem="5t8-Dt-lyJ" secondAttribute="bottom" constant="5" id="cRI-RV-E4o"/>
                                     <constraint firstItem="O6B-8p-BjH" firstAttribute="leading" secondItem="sdw-wo-cmJ" secondAttribute="trailing" constant="5" id="dyc-30-s4J"/>
@@ -371,9 +371,9 @@
     <resources>
         <image name="CarLocation" width="107" height="89"/>
         <image name="clockRed" width="32" height="32"/>
-        <image name="distance" width="32" height="34"/>
+        <image name="distance" width="640" height="680"/>
         <image name="icBikeGray" width="31" height="22"/>
-        <image name="icCarGray" width="27" height="22"/>
+        <image name="icCarGray" width="75" height="75"/>
         <image name="ic_loc_marker_red" width="32" height="32"/>
         <namedColor name="PrimaryColor">
             <color red="0.31400001049041748" green="0.31400001049041748" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

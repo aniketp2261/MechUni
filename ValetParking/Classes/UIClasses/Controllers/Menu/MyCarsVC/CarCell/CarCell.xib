@@ -28,7 +28,7 @@
                         <rect key="frame" x="16" y="10" width="561" height="125"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="NNR-7v-ikK">
-                                <rect key="frame" x="10" y="10" width="90" height="90"/>
+                                <rect key="frame" x="12" y="12" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="7i9-2j-2HT"/>
                                     <constraint firstAttribute="height" constant="90" id="Wm1-f3-f0U"/>
@@ -40,14 +40,14 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact us" translatesAutoresizingMaskIntoConstraints="NO" id="9Mp-IO-H5q">
-                                <rect key="frame" x="110" y="13" width="25" height="25"/>
+                                <rect key="frame" x="117" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="4jk-e3-bDe"/>
                                     <constraint firstAttribute="height" constant="25" id="PSC-g6-qqN"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMY-61-cJD">
-                                <rect key="frame" x="145" y="15" width="345" height="21"/>
+                                <rect key="frame" x="152" y="15" width="338" height="21"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                 <color key="textColor" name="PrimaryColor"/>
                                 <nil key="highlightedColor"/>
@@ -80,20 +80,20 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icBikeGray" translatesAutoresizingMaskIntoConstraints="NO" id="iBV-T9-Hnr">
-                                <rect key="frame" x="110" y="43" width="25" height="25"/>
+                                <rect key="frame" x="117" y="43" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="QiX-7k-Nxm"/>
                                     <constraint firstAttribute="height" constant="25" id="uEr-LD-sen"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypf-KZ-jsh">
-                                <rect key="frame" x="145" y="46" width="396" height="21"/>
+                                <rect key="frame" x="152" y="46" width="389" height="21"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                 <color key="textColor" name="PrimaryColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnL-vn-4G2">
-                                <rect key="frame" x="445" y="75" width="100" height="35"/>
+                                <rect key="frame" x="451" y="80" width="100" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="7Kn-lC-G0F"/>
@@ -107,20 +107,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NNR-7v-ikK" firstAttribute="leading" secondItem="21o-av-iA0" secondAttribute="leading" constant="10" id="1aI-br-53o"/>
-                            <constraint firstItem="iBV-T9-Hnr" firstAttribute="leading" secondItem="NNR-7v-ikK" secondAttribute="trailing" constant="10" id="7g3-N1-VVe"/>
+                            <constraint firstItem="NNR-7v-ikK" firstAttribute="leading" secondItem="21o-av-iA0" secondAttribute="leading" constant="12" id="1aI-br-53o"/>
+                            <constraint firstItem="iBV-T9-Hnr" firstAttribute="leading" secondItem="NNR-7v-ikK" secondAttribute="trailing" constant="15" id="7g3-N1-VVe"/>
                             <constraint firstItem="aiy-i4-irn" firstAttribute="top" secondItem="21o-av-iA0" secondAttribute="top" constant="15" id="Aht-05-gQW"/>
                             <constraint firstItem="Ypf-KZ-jsh" firstAttribute="leading" secondItem="iBV-T9-Hnr" secondAttribute="trailing" constant="10" id="FO0-af-act"/>
                             <constraint firstItem="Ypf-KZ-jsh" firstAttribute="top" secondItem="FMY-61-cJD" secondAttribute="bottom" constant="10" id="FaU-xE-Z37"/>
                             <constraint firstItem="FMY-61-cJD" firstAttribute="top" secondItem="21o-av-iA0" secondAttribute="top" constant="15" id="R4R-k7-H5V"/>
                             <constraint firstAttribute="trailing" secondItem="aiy-i4-irn" secondAttribute="trailing" constant="5" id="RXK-HQ-go9"/>
                             <constraint firstAttribute="trailing" secondItem="Ypf-KZ-jsh" secondAttribute="trailing" constant="20" id="YdK-t7-eLj"/>
-                            <constraint firstItem="9Mp-IO-H5q" firstAttribute="leading" secondItem="NNR-7v-ikK" secondAttribute="trailing" constant="10" id="d80-sA-vDS"/>
-                            <constraint firstItem="NNR-7v-ikK" firstAttribute="top" secondItem="21o-av-iA0" secondAttribute="top" constant="10" id="e0N-EY-CgS"/>
+                            <constraint firstItem="9Mp-IO-H5q" firstAttribute="leading" secondItem="NNR-7v-ikK" secondAttribute="trailing" constant="15" id="d80-sA-vDS"/>
+                            <constraint firstItem="NNR-7v-ikK" firstAttribute="top" secondItem="21o-av-iA0" secondAttribute="top" constant="12" id="e0N-EY-CgS"/>
                             <constraint firstItem="iBV-T9-Hnr" firstAttribute="top" secondItem="9Mp-IO-H5q" secondAttribute="bottom" constant="5" id="gVX-U3-wtE"/>
-                            <constraint firstAttribute="trailing" secondItem="PnL-vn-4G2" secondAttribute="trailing" constant="16" id="iKC-Me-zxZ"/>
+                            <constraint firstAttribute="trailing" secondItem="PnL-vn-4G2" secondAttribute="trailing" constant="10" id="iKC-Me-zxZ"/>
                             <constraint firstItem="aiy-i4-irn" firstAttribute="leading" secondItem="FMY-61-cJD" secondAttribute="trailing" id="iNW-vo-jSV"/>
-                            <constraint firstAttribute="bottom" secondItem="PnL-vn-4G2" secondAttribute="bottom" constant="15" id="jeb-g7-dbz"/>
+                            <constraint firstAttribute="bottom" secondItem="PnL-vn-4G2" secondAttribute="bottom" constant="10" id="jeb-g7-dbz"/>
                             <constraint firstItem="9Mp-IO-H5q" firstAttribute="centerY" secondItem="FMY-61-cJD" secondAttribute="centerY" id="uAy-2w-swf"/>
                             <constraint firstItem="FMY-61-cJD" firstAttribute="leading" secondItem="9Mp-IO-H5q" secondAttribute="trailing" constant="10" id="y5b-9z-Zlb"/>
                         </constraints>

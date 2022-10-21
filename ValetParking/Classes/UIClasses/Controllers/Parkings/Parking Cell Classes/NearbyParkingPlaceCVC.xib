@@ -34,10 +34,10 @@
                                 <rect key="frame" x="5" y="5" width="469" height="106"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2rc-hZ-Ur5">
-                                        <rect key="frame" x="10" y="10" width="60" height="60"/>
+                                        <rect key="frame" x="10" y="10" width="55" height="55"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="9hv-7u-Dmw"/>
-                                            <constraint firstAttribute="width" constant="60" id="jvi-Pp-NsH"/>
+                                            <constraint firstAttribute="height" constant="55" id="9hv-7u-Dmw"/>
+                                            <constraint firstAttribute="width" constant="55" id="jvi-Pp-NsH"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -46,39 +46,39 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXV-yx-hNY">
-                                        <rect key="frame" x="80" y="10" width="306" height="19"/>
+                                        <rect key="frame" x="75" y="10" width="311" height="16"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="16"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="0 min left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fN-Hl-yhC">
-                                        <rect key="frame" x="80" y="34" width="379" height="14"/>
+                                        <rect key="frame" x="75" y="31" width="384" height="12"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="12"/>
                                         <color key="textColor" name="PrimaryColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyA-41-wqG">
-                                        <rect key="frame" x="28" y="78" width="431" height="18"/>
+                                        <rect key="frame" x="28" y="73" width="431" height="23"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="12"/>
                                         <color key="textColor" name="PrimaryColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_loc_marker_red" translatesAutoresizingMaskIntoConstraints="NO" id="pdl-C7-ZIU">
-                                        <rect key="frame" x="8" y="80" width="15" height="15"/>
+                                        <rect key="frame" x="8" y="75" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="Uvd-Xi-Cug"/>
                                             <constraint firstAttribute="height" constant="15" id="YKq-FN-eYA"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="distance" translatesAutoresizingMaskIntoConstraints="NO" id="JNT-6G-WFn">
-                                        <rect key="frame" x="391" y="12" width="15" height="15"/>
+                                        <rect key="frame" x="391" y="10.5" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="5HR-8H-ELa"/>
                                             <constraint firstAttribute="width" constant="15" id="Gnq-Ca-1Fp"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HTI-kR-tub">
-                                        <rect key="frame" x="80" y="51" width="130" height="20"/>
+                                        <rect key="frame" x="75" y="46" width="136.5" height="20"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCarGray" translatesAutoresizingMaskIntoConstraints="NO" id="eSs-Ie-Yhf">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -88,20 +88,20 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 60/hr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNU-E2-OA4">
-                                                <rect key="frame" x="30" y="0.0" width="31.5" height="20"/>
+                                                <rect key="frame" x="30" y="0.0" width="34.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="12"/>
                                                 <color key="textColor" name="PrimaryColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icBikeGray" translatesAutoresizingMaskIntoConstraints="NO" id="IF5-gN-ke5">
-                                                <rect key="frame" x="71.5" y="0.0" width="20" height="20"/>
+                                                <rect key="frame" x="74.5" y="0.0" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="BZg-UU-8WV"/>
                                                     <constraint firstAttribute="height" constant="20" id="lii-NQ-KLP"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40/hr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5p-L9-9w5">
-                                                <rect key="frame" x="101.5" y="0.0" width="28.5" height="20"/>
+                                                <rect key="frame" x="104.5" y="0.0" width="32" height="20"/>
                                                 <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="12"/>
                                                 <color key="textColor" name="PrimaryColor"/>
                                                 <nil key="highlightedColor"/>
@@ -109,7 +109,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.16 km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUo-fb-xTi">
-                                        <rect key="frame" x="411" y="12.5" width="53" height="14"/>
+                                        <rect key="frame" x="411" y="12" width="53" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="53" id="MAh-9D-jbh"/>
                                         </constraints>
@@ -180,7 +180,7 @@
     <resources>
         <image name="distance" width="640" height="680"/>
         <image name="icBikeGray" width="31" height="22"/>
-        <image name="icCarGray" width="27" height="22"/>
+        <image name="icCarGray" width="75" height="75"/>
         <image name="ic_loc_marker_red" width="32" height="32"/>
         <namedColor name="PrimaryColor">
             <color red="0.31400001049041748" green="0.31400001049041748" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

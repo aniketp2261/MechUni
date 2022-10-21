@@ -259,7 +259,7 @@ extension ParkingVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         ParkingVCDel?.ParkingTicketClickAction(ticket: ticketArray[indexPath.row])
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width / 1.5, height: collectionView.bounds.height)
+        return CGSize(width: collectionView.bounds.width / 1.4, height: collectionView.bounds.height)
     }
 }
 

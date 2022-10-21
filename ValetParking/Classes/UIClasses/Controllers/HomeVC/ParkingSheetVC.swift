@@ -537,11 +537,11 @@ extension ParkingSheetVC: UICollectionViewDelegate, UICollectionViewDataSource,U
      if collectionView == nearbyParkingPlaceCollectionView{
         return CGSize(width: collectionView.bounds.width - 40, height: collectionView.bounds.height)
      } else if collectionView == ticketCollectionView{
-         return CGSize(width: collectionView.bounds.width / 1.5, height: collectionView.bounds.height)
+         return CGSize(width: collectionView.bounds.width / 1.4, height: collectionView.bounds.height)
      } else if collectionView == nearbyServicesCollectionView{
         return CGSize(width: collectionView.bounds.width - 40, height: collectionView.bounds.height)
      } else{
-        return CGSize(width: collectionView.bounds.width / 1.5, height: collectionView.bounds.height)
+        return CGSize(width: collectionView.bounds.width / 1.4, height: collectionView.bounds.height)
      }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

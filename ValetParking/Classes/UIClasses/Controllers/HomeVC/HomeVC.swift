@@ -327,12 +327,10 @@ class HomeVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, G
                                 let fourWheelerCost = result["four_wp_cost"] as? Int ?? 0
                                 let lat = result["lat"] as? String ?? ""
                                 let long = result["long"] as? String ?? ""
-                                let capacity = result["capacity"] as? String ?? ""
                                 let placeId = String(result["place_id"] as? Int ?? 0)
                                 let twoWheelerAvailableParking = String(result["two_wheeler_available_parking"] as? Int ?? 0)
                                 let fourWheelerAvailableParking = String(result["four_wheeler_available_parking"] as? Int ?? 0)
                                 let distance = result["distance"] as? String ?? ""
-                                let timeToReach = result["time_to_reach"] as? String ?? ""
                                 let model = NearbyPlaceModel(image: img, parkingName: parkingName, address: address, mobileNumber: mobileNumber, startOpeningHours: startOpeningHours, typeOfVehicle: String(typeOfVehicle), twoWheelerCost: String(twoWheelerCost), fourWheelerCost: String(fourWheelerCost), lat: lat, long: long, placeId: placeId, twoWheelerAvailableParking: twoWheelerAvailableParking, distance: distance, fourWheelerAvailableParking: fourWheelerAvailableParking, endOpeningHours: endOpeningHours)
                                 print("model000001----- \(model)")
                                 if model.typeOfVehicle == "1"{
@@ -575,8 +573,11 @@ class HomeVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, G
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        bottomSheetFpc.dismiss(animated: true, completion: nil)
-//        UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
+        UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     @objc func LogoutAction(){
         UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true){

@@ -34,20 +34,20 @@
                                 <rect key="frame" x="5" y="5" width="469" height="100"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cleaning" translatesAutoresizingMaskIntoConstraints="NO" id="ek0-QH-CMY">
-                                        <rect key="frame" x="10" y="10" width="60" height="60"/>
+                                        <rect key="frame" x="10" y="10" width="55" height="55"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="WSX-3y-34b"/>
-                                            <constraint firstAttribute="height" constant="60" id="Ybf-I7-ltR"/>
+                                            <constraint firstAttribute="width" constant="55" id="WSX-3y-34b"/>
+                                            <constraint firstAttribute="height" constant="55" id="Ybf-I7-ltR"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" ambiguous="YES" text="Bonet Denting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKM-Sb-CsN">
-                                        <rect key="frame" x="80" y="10" width="306" height="16"/>
+                                        <rect key="frame" x="75" y="10" width="311" height="16"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="16"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2 kms away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAP-9y-NFg">
-                                        <rect key="frame" x="100" y="31" width="64" height="12"/>
+                                        <rect key="frame" x="95" y="31" width="64.5" height="12"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="12"/>
                                         <color key="textColor" name="PrimaryColor"/>
                                         <nil key="highlightedColor"/>
@@ -81,14 +81,14 @@
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="clockRed" translatesAutoresizingMaskIntoConstraints="NO" id="RsW-wf-wJ6">
-                                        <rect key="frame" x="80" y="31" width="15" height="15"/>
+                                        <rect key="frame" x="75" y="31" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="U46-eg-SGb"/>
                                             <constraint firstAttribute="height" constant="15" id="ly7-Ih-c42"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" text="Pickup Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HD-44-8gI">
-                                        <rect key="frame" x="100" y="48" width="88.5" height="12"/>
+                                        <rect key="frame" x="95" y="48" width="91" height="12"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="12"/>
                                         <color key="textColor" name="PrimaryColor"/>
                                         <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="CarLocation" translatesAutoresizingMaskIntoConstraints="NO" id="goG-sp-Lum">
-                                        <rect key="frame" x="80" y="48" width="15" height="15"/>
+                                        <rect key="frame" x="75" y="48" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="i0g-gi-9ts"/>
                                             <constraint firstAttribute="height" constant="15" id="jxM-mt-18Z"/>
@@ -191,9 +191,9 @@
         <image name="CarLocation" width="107" height="89"/>
         <image name="Cleaning" width="433" height="300"/>
         <image name="clockRed" width="32" height="32"/>
-        <image name="distance" width="32" height="34"/>
+        <image name="distance" width="640" height="680"/>
         <image name="icBikeGray" width="31" height="22"/>
-        <image name="icCarGray" width="27" height="22"/>
+        <image name="icCarGray" width="75" height="75"/>
         <image name="ic_loc_marker_red" width="32" height="32"/>
         <namedColor name="PrimaryColor">
             <color red="0.31400001049041748" green="0.31400001049041748" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
