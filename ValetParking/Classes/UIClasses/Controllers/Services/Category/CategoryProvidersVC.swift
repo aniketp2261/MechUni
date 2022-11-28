@@ -33,7 +33,13 @@ class CategoryProvidersVC: UIViewController {
     var Userlat = UserDefaults.standard.string(forKey: "CurrentLat") ?? ""
     var Userlng = UserDefaults.standard.string(forKey: "CurrentLong") ?? ""
     var selectedRows = [IndexPath()]
-    var sortArray = ["Distance -- Low to High","Distance -- High to Low","Price -- Low to High","Price -- High to Low"]
+    var sortArray = ["Distance -- Low to High","Distance -- High to Low","Price -- Low to High","Price -- High to Low"]{
+        didSet{
+            DispatchQueue.main.async {
+                self.sortTableView.reloadData()
+            }
+        }
+    }
     var ServiceDataServiceId: String = ""
     var ProviderList: [CategoryProviderModel] = []
 
@@ -48,7 +54,6 @@ class CategoryProvidersVC: UIViewController {
         ProviderListTableView.rowHeight = UITableView.automaticDimension
         sortTableView.delegate = self
         sortTableView.dataSource = self
-        sortTableView.reloadData()
         sortTableView.superview?.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         ProviderListTableView.register(UINib(nibName: "CategoryProvidersTVC", bundle: nil), forCellReuseIdentifier: "CategoryProvidersTVC")
         backImg.isUserInteractionEnabled = true

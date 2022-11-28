@@ -25,7 +25,7 @@ class SearchParkingVC: UIViewController {
     
     var nearbyPlacesArray:[NearbyPlaceModel] = []
     var searchParking:[NearbyPlaceModel] = []
-    var sortArray = ["Distance -- Low to High","Distance -- High to Low"]
+    var sortArray = ["Distance -- Low to High","Distance -- High to Low","Two Wheeler","Four Wheeler"]
     var searchedText = ""
     var selectedRows = [IndexPath()]
     

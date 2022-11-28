@@ -8662,7 +8662,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3u-ck-nNF">
-                                        <rect key="frame" x="0.0" y="712" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="622" width="414" height="240"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="kqX-8M-XrR">
                                                 <rect key="frame" x="374" y="15" width="25" height="25"/>
@@ -8678,7 +8678,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="35" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9bx-C6-VkY">
-                                                <rect key="frame" x="20" y="53" width="374" height="87"/>
+                                                <rect key="frame" x="20" y="53" width="374" height="177"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchParkingSortTVC" id="t6u-sq-hE6" customClass="SearchParkingSortTVC" customModule="MechUni" customModuleProvider="target">
@@ -8729,7 +8729,7 @@
                                             <constraint firstItem="9bx-C6-VkY" firstAttribute="leading" secondItem="O3u-ck-nNF" secondAttribute="leading" constant="20" id="byy-Q7-G2u"/>
                                             <constraint firstItem="kqX-8M-XrR" firstAttribute="top" secondItem="O3u-ck-nNF" secondAttribute="top" constant="15" id="gA0-Qu-cyN"/>
                                             <constraint firstItem="Byh-zK-rVO" firstAttribute="top" secondItem="O3u-ck-nNF" secondAttribute="top" constant="15" id="oz3-zr-bse"/>
-                                            <constraint firstAttribute="height" constant="150" id="xM8-Zj-JSw"/>
+                                            <constraint firstAttribute="height" constant="240" id="xM8-Zj-JSw"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -9748,10 +9748,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9J-Hh-8mE" customClass="ShadowView" customModule="MechUni" customModuleProvider="target">
-                                <rect key="frame" x="19.999999999999986" y="69" width="244.66666666666663" height="40"/>
+                                <rect key="frame" x="20" y="69" width="374" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Parking, Services" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RUA-HR-d9A">
-                                        <rect key="frame" x="42.999999999999986" y="5" width="201.66666666666663" height="30"/>
+                                        <rect key="frame" x="43" y="5" width="331" height="30"/>
                                         <color key="textColor" name="PrimaryColor"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -9918,13 +9918,13 @@
                                 </constraints>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGS-hT-jIX">
-                                <rect key="frame" x="0.0" y="217" width="284.66666666666669" height="645"/>
+                                <rect key="frame" x="0.0" y="217" width="414" height="645"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="466-Ek-1mM">
-                                        <rect key="frame" x="0.0" y="0.0" width="284.66666666666669" height="650"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="650"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xE6-xm-DXM">
-                                                <rect key="frame" x="10" y="23" width="274.66666666666669" height="120"/>
+                                                <rect key="frame" x="10" y="23" width="404" height="120"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="D9a-Af-CgC"/>
@@ -9938,22 +9938,22 @@
                                                 <cells/>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearby Parking Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrf-6T-vzu">
-                                                <rect key="frame" x="15.999999999999986" y="0.0" width="252.66666666666663" height="18"/>
+                                                <rect key="frame" x="16" y="0.0" width="382" height="18"/>
                                                 <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="18"/>
                                                 <color key="textColor" name="PrimaryColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVU-Vx-GrJ">
-                                                <rect key="frame" x="0.0" y="143" width="284.66666666666669" height="160"/>
+                                                <rect key="frame" x="0.0" y="143" width="414" height="160"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearby Service Provider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhF-pK-rWv">
-                                                        <rect key="frame" x="15.999999999999986" y="5" width="252.66666666666663" height="20"/>
+                                                        <rect key="frame" x="16" y="5" width="382" height="20"/>
                                                         <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="18"/>
                                                         <color key="textColor" name="PrimaryColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HlF-vZ-GWo">
-                                                        <rect key="frame" x="10" y="30" width="274.66666666666669" height="120"/>
+                                                        <rect key="frame" x="10" y="30" width="404" height="120"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="120" id="XxL-at-cYD"/>
@@ -9979,13 +9979,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Tickets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qI-Zq-NgA">
-                                                <rect key="frame" x="14.999999999999986" y="303" width="254.66666666666663" height="18"/>
+                                                <rect key="frame" x="15" y="303" width="384" height="18"/>
                                                 <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="18"/>
                                                 <color key="textColor" name="PrimaryColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yu8-7y-1hA">
-                                                <rect key="frame" x="10" y="321" width="274.66666666666669" height="100"/>
+                                                <rect key="frame" x="10" y="321" width="404" height="100"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="b3K-VU-NCB"/>
@@ -9999,16 +9999,16 @@
                                                 <cells/>
                                             </collectionView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRC-sH-sS2">
-                                                <rect key="frame" x="0.0" y="426" width="284.66666666666669" height="160"/>
+                                                <rect key="frame" x="0.0" y="426" width="414" height="160"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ongoing Orders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOW-5z-5lO">
-                                                        <rect key="frame" x="15.999999999999986" y="5" width="252.66666666666663" height="18"/>
+                                                        <rect key="frame" x="16" y="5" width="382" height="18"/>
                                                         <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="18"/>
                                                         <color key="textColor" name="PrimaryColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lrO-5n-COp">
-                                                        <rect key="frame" x="10" y="28" width="274.66666666666669" height="100"/>
+                                                        <rect key="frame" x="10" y="28" width="404" height="100"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="waa-k5-vx5"/>

@@ -18,12 +18,24 @@ struct ServicesByCategoryModel {
 class CategoryServicesVC: UIViewController {
     
     @IBOutlet weak var lbl: UILabel!
+    @IBOutlet weak var sortImg: UIImageView!
     @IBOutlet weak var backBtnImg: UIImageView!
     @IBOutlet weak var ServiceListTableView: UITableView!
+    @IBOutlet weak var sortView: UIView!
+    @IBOutlet weak var closeSortImg: UIImageView!
+    @IBOutlet weak var sortTableView: UITableView!
     
     var ServicesCategoryVCDelegate: ServicesCatVCDelegate? = nil
     var CategoryId: String = ""
     var serviceArray: [ServicesByCategoryModel] = []
+    var selectedRows = [IndexPath()]
+    var sortArray = ["Two Wheeler","Four Wheeler"]{
+        didSet{
+            DispatchQueue.main.async {
+                self.sortTableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +43,13 @@ class CategoryServicesVC: UIViewController {
         ServiceListTableView.dataSource = self
         ServiceListTableView.estimatedRowHeight = 150
         ServiceListTableView.rowHeight = UITableView.automaticDimension
+        sortTableView.delegate = self
+        sortTableView.dataSource = self
+        sortTableView.superview?.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
+        sortImg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sortAction)))
         backBtnImg.isUserInteractionEnabled = true
         backBtnImg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backAction)))
+        closeSortImg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sortCloseAction)))
         NotificationCenter.default.addObserver(self, selector: #selector(appMovedToForeground), name: Notification.Name("AppEnterForeground"), object: nil)
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -43,14 +60,20 @@ class CategoryServicesVC: UIViewController {
         APICALLS()
     }
     func APICALLS(){
-        getServiceList(CategoryId: CategoryId)
+        getServiceList(CategoryId: CategoryId, vehicleType: 0)
+    }
+    @objc func sortAction(){
+        sortView.isHidden = false
+    }
+    @objc func sortCloseAction(){
+        sortView.isHidden = true
     }
     @objc func backAction(){
         navigationController?.popViewController(animated: false)
         ServicesCategoryVCDelegate?.ServicesNavigationBack()
     }
-    func getServiceList(CategoryId: String){
-        let params:[String:Any] = ["category_id": CategoryId]
+    func getServiceList(CategoryId: String, vehicleType: Int){
+        let params:[String:Any] = ["category_id": CategoryId, "vehicle_type": vehicleType]
         if Connectivity.isConnectedToInternet
         {
             Alamofire.request(APIEndPoints.getServicesByCategory,method: .post,parameters: params, encoding: JSONEncoding.default,headers: nil).responseJSON { apiResponse in
@@ -104,42 +127,66 @@ class ServiceCategoryTVC: UITableViewCell{
 }
 extension CategoryServicesVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return serviceArray.count
+        if tableView == ServiceListTableView{
+            return serviceArray.count
+        } else{
+            return sortArray.count
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceCategoryTVC", for: indexPath) as! ServiceCategoryTVC
-        cell.selectionStyle = .none
-        cell.ServiceName.superview?.layer.shadowColor = UIColor.black.cgColor
-        cell.ServiceName.superview?.layer.shadowOffset = CGSize(width: 0, height: 3)
-        cell.ServiceName.superview?.layer.shadowOpacity = 0.3
-        cell.ServiceName.superview?.layer.shadowRadius = 3.0
-        cell.ServiceName.superview?.layer.cornerRadius = 15
-        let webPCoder = SDImageWebPCoder.shared
-        SDImageCodersManager.shared.addCoder(webPCoder)
-        let webpURL = URL(string: APIEndPoints.BaseURL+serviceArray[indexPath.row].serviceImage)
-        DispatchQueue.main.async {
-            cell.ServiceImg.sd_setImage(with: webpURL, placeholderImage: #imageLiteral(resourceName: "Cleaning"), options: [], completed: nil)
-        }
-        cell.ServiceName.text = serviceArray[indexPath.row].serviceName
-        cell.ServiceDescription.text = serviceArray[indexPath.row].serviceDescription
-        if serviceArray[indexPath.row].vehicleType == "1"{
-            cell.FourWheelerImg.isHidden = true
-            cell.TwoWheelerImg.isHidden = false
-        } else if serviceArray[indexPath.row].vehicleType == "2"{
-            cell.FourWheelerImg.isHidden = false
-            cell.TwoWheelerImg.isHidden = true
+        if tableView == ServiceListTableView{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceCategoryTVC", for: indexPath) as! ServiceCategoryTVC
+            cell.selectionStyle = .none
+            cell.ServiceName.superview?.layer.shadowColor = UIColor.black.cgColor
+            cell.ServiceName.superview?.layer.shadowOffset = CGSize(width: 0, height: 3)
+            cell.ServiceName.superview?.layer.shadowOpacity = 0.3
+            cell.ServiceName.superview?.layer.shadowRadius = 3.0
+            cell.ServiceName.superview?.layer.cornerRadius = 15
+            let webPCoder = SDImageWebPCoder.shared
+            SDImageCodersManager.shared.addCoder(webPCoder)
+            let webpURL = URL(string: APIEndPoints.BaseURL+serviceArray[indexPath.row].serviceImage)
+            DispatchQueue.main.async {
+                cell.ServiceImg.sd_setImage(with: webpURL, placeholderImage: #imageLiteral(resourceName: "Cleaning"), options: [], completed: nil)
+            }
+            cell.ServiceName.text = serviceArray[indexPath.row].serviceName
+            cell.ServiceDescription.text = serviceArray[indexPath.row].serviceDescription
+            if serviceArray[indexPath.row].vehicleType == "1"{
+                cell.FourWheelerImg.isHidden = true
+                cell.TwoWheelerImg.isHidden = false
+            } else if serviceArray[indexPath.row].vehicleType == "2"{
+                cell.FourWheelerImg.isHidden = false
+                cell.TwoWheelerImg.isHidden = true
+            } else{
+                cell.FourWheelerImg.isHidden = false
+                cell.TwoWheelerImg.isHidden = false
+            }
+            return cell
         } else{
-            cell.FourWheelerImg.isHidden = false
-            cell.TwoWheelerImg.isHidden = false
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryProvidersSortTVC") as! CategoryProvidersSortTVC
+            cell.sortLbl.text = sortArray[indexPath.row]
+            if selectedRows.contains(indexPath){
+                cell.radImg.image = #imageLiteral(resourceName: "ic_red_radio_circleFill").withColor(.black)
+            } else{
+                cell.radImg.image = #imageLiteral(resourceName: "ic_red_radio_circle").withColor(.black)
+            }
+            return cell
         }
-        return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = UIStoryboard(name: "Services", bundle: nil).instantiateViewController(withIdentifier: "CategoryProvidersVC") as! CategoryProvidersVC
-        vc.ServiceDataServiceId = serviceArray[indexPath.row].serviceId
-        self.navigationController?.pushViewController(vc, animated: true)
+        if tableView == ServiceListTableView{
+            let vc = UIStoryboard(name: "Services", bundle: nil).instantiateViewController(withIdentifier: "CategoryProvidersVC") as! CategoryProvidersVC
+            vc.ServiceDataServiceId = serviceArray[indexPath.row].serviceId
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else{
+            self.sortCloseAction()
+            self.getServiceList(CategoryId: CategoryId, vehicleType: indexPath.row+1)
+        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        if tableView == ServiceListTableView{
+            return UITableView.automaticDimension
+        } else{
+            return 35
+        }
     }
 }
